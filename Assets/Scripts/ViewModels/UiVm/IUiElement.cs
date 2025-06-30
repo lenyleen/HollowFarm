@@ -20,8 +20,8 @@ namespace DefaultNamespace.ViewModels.UiVm
     
     public interface IDialogMenu<TParams, TResult> : IUiElement
     {
-        public void Complete(SoilFilter result);
-        public UniTask<SoilFilter> WaitForResultAsync();
+        public void Complete(TResult result);
+        public UniTask<TResult> WaitForResultAsync();
         public void Show(Action onSelected, TParams param);
     }
 }

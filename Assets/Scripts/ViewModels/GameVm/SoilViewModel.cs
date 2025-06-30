@@ -4,6 +4,7 @@ using DefaultNamespace.Models;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.Signals;
 using DefaultNamespace.View;
+using DefaultNamespace.ViewModels.Interfaces;
 using JetBrains.Annotations;
 using Service;
 using UniRx;
@@ -12,7 +13,7 @@ using Zenject;
 
 namespace DefaultNamespace.ViewModels
 {
-    public class SoilViewModel : IInitializable, IDisposable
+    public class SoilViewModel : IInitializable, IDisposable, ICommandPerformer
     {
         private readonly Soil _model;
         private readonly SignalBus _signalBus;
@@ -53,5 +54,17 @@ namespace DefaultNamespace.ViewModels
             // TODO release managed resources here
         }
         public class Factory : PlaceholderFactory<Soil,SoilViewModel> { }
+
+        public void AddWater() => _model.Water();
+
+        public void Remove()
+        {
+            throw new NotImplementedException();  //TODO дописать логику для команд действий (инит в контейнер, методы дестроя и харвеста для вью модели планта)
+        }
+
+        public void Harvest()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
