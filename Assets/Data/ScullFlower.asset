@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8b0675790c424eb1029bcbbe6e4f8c, type: 3}
+  m_Name: ScullFlower
+  m_EditorClassIdentifier: 
+  name: 0
+  startGrowthState: 0
+  growthDurationInMinutes: 5
+  byMoonGrowthMultiplier: 1.05
+  byWaterGrowthMultiplier: 1.05
+  SpritesByPhase:
+  - {fileID: 1746454464780720841, guid: a33b76f618742cb4ea9cb2a4b281b54b, type: 3}
+  - {fileID: 4112224087372258889, guid: a33b76f618742cb4ea9cb2a4b281b54b, type: 3}
+  - {fileID: -8861191266249738902, guid: a33b76f618742cb4ea9cb2a4b281b54b, type: 3}
+  DiedSpritesByPhase:
+  - {fileID: 8348827544157743175, guid: 28e9557491e545546a010363622997a7, type: 3}
+  - {fileID: -764020133803408481, guid: 28e9557491e545546a010363622997a7, type: 3}
+  - {fileID: 7448056872853570849, guid: 28e9557491e545546a010363622997a7, type: 3}
+  LightColor: {r: 0.8962264, g: 0.84309185, b: 0.31706125, a: 0}

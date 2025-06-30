@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 28e9557491e545546a010363622997a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7448056872853570849
+    second: died_plantsd_0
+  - first:
+      213: -764020133803408481
+    second: died_plantsd_1
+  - first:
+      213: 8348827544157743175
+    second: died_plantsd_2
+  - first:
+      213: -1336487717626221062
+    second: died_plantsd_3
+  - first:
+      213: 1701401840288416589
+    second: died_plantsd_4
+  - first:
+      213: 3498384908987414164
+    second: died_plantsd_5
+  - first:
+      213: -1205028417677254887
+    second: died_plantsd_6
+  - first:
+      213: -8083986156464458758
+    second: died_plantsd_7
+  - first:
+      213: -6554778184257128743
+    second: died_plantsd_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: died_plantsd_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1120
+        width: 298
+        height: 378
+      alignment: 9
+      pivot: {x: 0.5234241, y: 0.17222409}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125085da340dc5760800000000000000
+      internalID: 7448056872853570849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_1
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1120
+        width: 186
+        height: 318
+      alignment: 9
+      pivot: {x: 0.49061832, y: 0.13781777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93c66b7cb7a565f0800000000000000
+      internalID: -764020133803408481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_2
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1135
+        width: 175
+        height: 209
+      alignment: 9
+      pivot: {x: 0.44016916, y: 0.17436488}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748e48cda6efcd370800000000000000
+      internalID: 8348827544157743175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 784
+        width: 246
+        height: 299
+      alignment: 9
+      pivot: {x: 0.48581293, y: 0.1556572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd67387087d37de0800000000000000
+      internalID: -1336487717626221062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_4
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 782
+        width: 200
+        height: 239
+      alignment: 9
+      pivot: {x: 0.491275, y: 0.18603541}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43469695f79c9710800000000000000
+      internalID: 1701401840288416589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_5
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 782
+        width: 178
+        height: 160
+      alignment: 9
+      pivot: {x: 0.4607849, y: 0.16189346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49638cb1a82cc8030800000000000000
+      internalID: 3498384908987414164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 340
+        width: 248
+        height: 320
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.14553499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f9814e901e64fe0800000000000000
+      internalID: -1205028417677254887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_7
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 340
+        width: 228
+        height: 332
+      alignment: 9
+      pivot: {x: 0.52296126, y: 0.14257841}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3b2c6eb69efcf80800000000000000
+      internalID: -8083986156464458758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: died_plantsd_8
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 338
+        width: 196
+        height: 198
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16508992}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6bfd958ffb805a0800000000000000
+      internalID: -6554778184257128743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 97b65c007eb7b2a498bc1b0d2655aef6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      died_plantsd_0: 7448056872853570849
+      died_plantsd_1: -764020133803408481
+      died_plantsd_2: 8348827544157743175
+      died_plantsd_3: -1336487717626221062
+      died_plantsd_4: 1701401840288416589
+      died_plantsd_5: 3498384908987414164
+      died_plantsd_6: -1205028417677254887
+      died_plantsd_7: -8083986156464458758
+      died_plantsd_8: -6554778184257128743
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
