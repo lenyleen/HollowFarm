@@ -8,5 +8,6 @@ namespace DefaultNamespace.Factory
     public interface IPlantSpawnService
     {
         public PlantViewModel Spawn(PlantData plantData, Soil soilModel, Vector3 position);
+        public void Despawn(PlantViewModel plantViewModel);
     }
 }

@@ -4,6 +4,7 @@ using DefaultNamespace.Handlers;
 using DefaultNamespace.Models.Interfaces;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.ScriptableObjects.Service;
+using DefaultNamespace.Signals;
 using Service;
 using UniRx;
 using UnityEngine;
@@ -11,7 +12,7 @@ using Zenject;
 
 namespace DefaultNamespace.Models
 {
-    public class PlantModel :IMoonPhaseDependent, IPlantStateContext
+    public class PlantModel :IMoonPhaseDependent, IPlantStateContext, IDisposable
     {
         public PlantData Data { get; }
         public DateTime PlantedAt { get; private set; }
@@ -24,6 +25,8 @@ namespace DefaultNamespace.Models
         public ReactiveCollection<ConsumableData> Boosters { get; }
 
         private MoonPhase _currentMoonPhase;
+
+        private int _amount;
 
 
         public PlantModel(PlantData plantData)
@@ -42,6 +45,16 @@ namespace DefaultNamespace.Models
         public void UpdateMoonPhase(MoonPhase phase)
         {
             
+        }
+
+        public void Dispose()
+        {
+            CurrentStatus.Value = PlantStatus.Harvested;
+        }
+        
+        public PlantHarvestedSignal Harvest()
+        {
+            return new PlantHarvestedSignal(Data, _amount);
         }
     }
 }

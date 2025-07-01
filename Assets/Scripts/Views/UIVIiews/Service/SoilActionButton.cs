@@ -20,16 +20,14 @@ namespace DefaultNamespace.Views.UIVIiews.Service
 
         public IObservable<SoilActionType> OnClickAsObservable => _onClickSubject;
 
-        private void Awake()
+        public void Initialize(Sprite sprite, RectTransform parentTransform, SoilActionType actionType)
         {
             _button.onClick.AddListener(() => _onClickSubject.OnNext(_actionType));
-        }
-
-        public void Initialize(SoilActionType actionType)
-        {
+            
+            transform.SetParent(parentTransform);
             _actionType = actionType;
+            _image.sprite = sprite;
         }
-
         private void OnDestroy()
         {
             _button.onClick.RemoveAllListeners();

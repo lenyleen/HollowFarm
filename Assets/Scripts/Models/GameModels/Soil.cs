@@ -65,6 +65,12 @@ namespace DefaultNamespace.Models
             // Логика для увеличения влаги в почве
         }
 
+        public void RemovePlant()
+        {
+            _plant.Dispose();
+            _plant = null;
+        }
+
         public void SetPlantModel(PlantModel plantModel)
         {
             _plant = plantModel;

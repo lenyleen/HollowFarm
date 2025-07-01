@@ -20,9 +20,8 @@ namespace DefaultNamespace.ViewModels
         private readonly SignalBus _signalBus;
         private PlantStatus _currentMainStatus;
         public ReactiveProperty<Sprite> GrowthStage { get;}
-
         public ReactiveCollection<PlantStatus> StatusIcons { get; } = new (new HashSet<PlantStatus>());
-        public ReactiveProperty<bool> IsHovered { get; } = new(){Value = false};
+        public ReactiveProperty<bool> IsHovered { get; } = new(false);
         public PlantViewModel(PlantModel model, SignalBus signalBus)
         {
             _model = model;
@@ -64,7 +63,7 @@ namespace DefaultNamespace.ViewModels
             var sprite = percent switch
             {
                 <= 0.33 => GrowthStage.Value = _model.Data.SpritesByPhase[0],
-                <= 0.66 => GrowthStage.Value = _model.Data.SpritesByPhase[1],
+                0.66 => GrowthStage.Value = _model.Data.SpritesByPhase[1],
                 < 1.0 => GrowthStage.Value = _model.Data.SpritesByPhase[2],
                 _ => GrowthStage.Value = _model.Data.SpritesByPhase[2]
             };
@@ -87,7 +86,12 @@ namespace DefaultNamespace.ViewModels
             StatusIcons.Remove(_currentMainStatus);
             StatusIcons.Add(status);
         }
-        
+
+        public void Harvest()
+        {
+            var signalToFire = _model.Harvest();
+            _signalBus.Fire(signalToFire);
+        }
         public void Hover(Vector3 position, int direction = 1)
         {
             IsHovered.Value = direction > 0;

@@ -6,6 +6,7 @@
         Boosted,
         NeedWatering,
         CanBeHarvested,
-        Died
+        Died,
+        Harvested
     }
 }

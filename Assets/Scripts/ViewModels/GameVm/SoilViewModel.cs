@@ -59,12 +59,17 @@ namespace DefaultNamespace.ViewModels
 
         public void Remove()
         {
-            throw new NotImplementedException();  //TODO дописать логику для команд действий (инит в контейнер, методы дестроя и харвеста для вью модели планта)
+            _plantSpawnService.Despawn(_plantViewModel);
+            _plantViewModel = null;
+            _model.RemovePlant();
         }
 
         public void Harvest()
         {
-            throw new NotImplementedException();
+            _plantViewModel.Harvest();
+            _plantSpawnService.Despawn(_plantViewModel);
+            _plantViewModel = null;
+            _model.RemovePlant(); ;
         }
     }
 }

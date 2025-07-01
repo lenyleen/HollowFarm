@@ -23,16 +23,18 @@ namespace DefaultNamespace.Factory
         private readonly DiContainer _container;
         private readonly PlantView _plantViewPrefab;
         private readonly SignalBus _signalBus;
-        private readonly ITimeHandler _timeHandler;
+        private readonly PlantView.Pool _pool;
+        private readonly Dictionary<PlantViewModel, PlantView> _views;
 
         public PlantSpawnService(DiContainer container, PlantView view, SignalBus signalBus, Image prefab, 
-            PlantStatusIconData plantStatusIconData, ITimeHandler timeHandler)
+            PlantStatusIconData plantStatusIconData)
         {
             _plantViewPrefab = view;
             _container = container;
             _signalBus = signalBus;
             _iconPrefab = prefab;
             _plantStatusIconData = plantStatusIconData;
+            _views = new  Dictionary<PlantViewModel, PlantView>();
         }
 
         public PlantViewModel Spawn(PlantData plantData, Soil soilModel, Vector3 position)
@@ -57,12 +59,22 @@ namespace DefaultNamespace.Factory
                 image.rectTransform.sizeDelta = new Vector2(imageRect.x/26, imageRect.y/26);
                 images.Add(statusIcon.Key, image);
             }
+
+            var plantView = _pool.Spawn(plantViewModel, new Vector3(position.x, position.y + 2.3f, 0),
+                model.Data.LightColor, model.Data.SpritesByPhase[0], images);
             
-            var plantView = _container.InstantiatePrefabForComponent<PlantView>(_plantViewPrefab);
-            plantView.transform.position = new Vector3(position.x,position.y + 2.3f,0);
-            plantView.Initialize(plantViewModel, model.Data.LightColor,model.Data.SpritesByPhase[0],images);
-            
+            _views.Add(plantViewModel, plantView);
             return plantViewModel;
+        }
+
+        public void Despawn(PlantViewModel plantViewModel)
+        {
+            if(!_views.TryGetValue(plantViewModel, out var view))
+                return;
+            
+            _pool.Despawn(view);
+            plantViewModel.Dispose();//TODO: возможно нужно сделать отдельный сервис для хендла анимаций
+            _views.Remove(plantViewModel);
         }
     }
 }

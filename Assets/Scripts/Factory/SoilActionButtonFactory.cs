@@ -1,11 +1,12 @@
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.Views.UIVIiews.Service;
+using Service;
 using UnityEngine;
 using Zenject;
 
 namespace DefaultNamespace.Factory
 {
-    public class SoilActionButtonFactory : IFactory<RectTransform,Sprite,ISoilActionButton>
+    public class SoilActionButtonFactory : IFactory<RectTransform,SoilActionType,ISoilActionButton>
     {
         private readonly SoilActionButton _prefab;
         private readonly SoilActionsButtonsData _data;
@@ -17,9 +18,11 @@ namespace DefaultNamespace.Factory
             _data = data;
             _container = container;
         }
-        public ISoilActionButton Create(RectTransform parentTransform, Sprite sprite)
+        public ISoilActionButton Create(RectTransform parentTransform, SoilActionType type)
         {
-            return _container.InstantiatePrefabForComponent<ISoilActionButton>(_prefab);
+            var button =  _container.InstantiatePrefabForComponent<ISoilActionButton>(_prefab);
+            button.Initialize(_data.Actions[type],parentTransform, type);
+            return button; //TODO: доделать инициализацию юи, плант вм, сигналов.
         }
     }
 }

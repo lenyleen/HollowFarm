@@ -44,6 +44,12 @@ namespace DefaultNamespace.Handlers
 
         private void ChangeState(PlantStatus status)
         {
+            if (status == PlantStatus.Harvested)
+            {
+                Dispose();
+                return;
+            }
+            
             if(status == PlantStatus.CanBeHarvested)
                 _timeHandler.Unsubscribe(this);
             
@@ -59,7 +65,6 @@ namespace DefaultNamespace.Handlers
         public void Dispose()
         {
             _timeHandler.Unsubscribe(this);
-            
             _disposables.Dispose();
         }
 
