@@ -72,6 +72,7 @@ namespace DefaultNamespace.Views
         
         private void OnDestroy()
         {
+            if(_disposable == null) return;
             _disposable.Dispose();
         }
         

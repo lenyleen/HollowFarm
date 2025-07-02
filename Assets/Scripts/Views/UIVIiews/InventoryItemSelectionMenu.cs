@@ -9,12 +9,14 @@ using UnityEngine.UI;
 using System.Threading;
 using DefaultNamespace.Views.UIVIiews.Abstractions;
 using DefaultNamespace.Views.UIVIiews.Interfaces;
+using Service;
 
 namespace DefaultNamespace.Views.UIVIiews
 {
     
     public class InventoryItemSelectionMenu : MovableUiElement, IInventoryItemSelectionMenu
     {
+        [filed:SerializeField] public UiType UiType { get; private set; }
         [SerializeField] private RectTransform _seedButtonContainer;
 
         private bool _isShowing;

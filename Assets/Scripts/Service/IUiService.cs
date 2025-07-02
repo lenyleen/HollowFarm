@@ -8,8 +8,7 @@ namespace Service
     {
         public void Show<TUi, TParams>(TParams args) where TUi : IUiElement<TParams>;
         public TUi ShowDialogMenu<TUi, TParams, TResult>(TParams args) where TUi : IDialogMenu<TParams, TResult>;
-        public void CloseOne();
-        public void CloseAll();
+        public void Close();
         
     }
 }

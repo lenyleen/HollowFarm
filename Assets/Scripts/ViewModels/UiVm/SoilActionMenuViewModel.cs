@@ -13,6 +13,7 @@ namespace DefaultNamespace.ViewModels.UiVm
 {
     public class SoilActionMenuViewModel :IDisposable, IUiElement<SoilActionMenuParams>
     {
+        public UiType UiType => _menu.UiType;
         private readonly SoilActionsMenu _menu;
         private readonly SignalBus _signalBus;
         private readonly IFactory<IEnumerable<ICommandPerformer>, SoilActionType, ICommand<ICommandPerformer>> _commandFactory;
@@ -32,16 +33,20 @@ namespace DefaultNamespace.ViewModels.UiVm
             _menu.OnActionClicked
                 .Subscribe(actionType =>
                 {
-                    _commandFactory.Create(param.CommandPerformers, actionType);
+                    var command = _commandFactory.Create(param.CommandPerformers, actionType);
+                    command.Execute();
                 })
                 .AddTo(_disposable);
-            
+               
+            _menu.Show();
         }
 
-        public void Show() {}
+        public void Show()
+        { }
 
         public void Hide()
         {
+            _menu.Hide();  
             _disposable.Dispose();
         }
         

@@ -6,6 +6,7 @@ using DefaultNamespace.Models;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.View;
 using DefaultNamespace.ViewModels;
+using DefaultNamespace.Views;
 using Handlers.ClickHandler;
 using Handlers.ClickHandler.States;
 using Service;
@@ -68,9 +69,12 @@ namespace DefaultNamespace.Initializers
 
         private void InitializePlant()
         {
+            Container.BindMemoryPool<PlantView,PlantView.Pool>().WithInitialSize(10).
+            FromComponentInNewPrefab(_gameInstallerData.Data._plantViewPrefab).UnderTransformGroup("Plants");
+            
             Container.BindInterfacesAndSelfTo<PlantSpawnService>()
                 .AsSingle()
-                .WithArguments(_gameInstallerData.Data._plantViewPrefab, _gameInstallerData.PlantStatusIconData,
+                .WithArguments( _gameInstallerData.PlantStatusIconData,
                     _gameInstallerData.PlantIconPrefab);
             
             Container.BindInterfacesAndSelfTo<PlantStateFactory>().AsSingle();

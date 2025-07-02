@@ -5,9 +5,9 @@ namespace DefaultNamespace.ViewModels.UiVm.Params
 {
     public class SoilActionMenuParams
     {
-        public List<ICommandPerformer> CommandPerformers { get; }
+        public IEnumerable<ICommandPerformer> CommandPerformers { get; }
 
-        public SoilActionMenuParams(List<ICommandPerformer> commandPerformers)
+        public SoilActionMenuParams(IEnumerable<ICommandPerformer> commandPerformers)
         {
             CommandPerformers = commandPerformers;
         }

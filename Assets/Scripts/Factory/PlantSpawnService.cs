@@ -21,18 +21,17 @@ namespace DefaultNamespace.Factory
         private readonly Image _iconPrefab;
         private readonly PlantStatusIconData _plantStatusIconData;
         private readonly DiContainer _container;
-        private readonly PlantView _plantViewPrefab;
         private readonly SignalBus _signalBus;
         private readonly PlantView.Pool _pool;
         private readonly Dictionary<PlantViewModel, PlantView> _views;
 
-        public PlantSpawnService(DiContainer container, PlantView view, SignalBus signalBus, Image prefab, 
+        public PlantSpawnService(DiContainer container,PlantView.Pool pool,  SignalBus signalBus, Image prefab, 
             PlantStatusIconData plantStatusIconData)
         {
-            _plantViewPrefab = view;
             _container = container;
             _signalBus = signalBus;
             _iconPrefab = prefab;
+            _pool = pool;
             _plantStatusIconData = plantStatusIconData;
             _views = new  Dictionary<PlantViewModel, PlantView>();
         }

@@ -9,6 +9,7 @@ namespace DefaultNamespace.ViewModels.UiVm
 {
     public interface IUiElement
     {
+        public UiType UiType { get; }
         public void Show();
         public void Hide();
     }

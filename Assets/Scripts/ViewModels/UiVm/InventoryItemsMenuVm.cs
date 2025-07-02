@@ -23,6 +23,7 @@ namespace DefaultNamespace.ViewModels.UiVm
 {
     public class InventoryItemsMenuVm<T> : IInitializable, IUiElement<SoilPopupParams>, IDisposable where T : ICanBeDrawnInInventory
     {
+        public UiType UiType => _view.UiType;
         private readonly IInventoryItemSelectionMenu _view;
         private readonly InventoyItemMenuModel<T> _model;
         private readonly CompositeDisposable _disposables = new CompositeDisposable();

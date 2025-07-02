@@ -27,7 +27,7 @@ namespace Service
 
         public void Initialize()
         {
-            _signalBus.Subscribe<ClosePopUpRequestSignal>(CloseOne);
+            _signalBus.Subscribe<ClosePopUpRequestSignal>(Close);
         }
 
         private void EnableClosingUiClicks(bool enable)
@@ -60,7 +60,7 @@ namespace Service
 
             if(_showedUiElements.Contains(ui)) return (TUi)ui;
             
-            ((TUi)ui).Show(CloseOne,args);
+            ((TUi)ui).Show(Close,args);
             
             _showedUiElements.Push(ui);
             
@@ -68,7 +68,7 @@ namespace Service
             return (TUi)ui;
         }
         
-        public void CloseOne()
+        public void Close()
         {
             if(!_showedUiElements.Any()) return;
             
@@ -95,7 +95,7 @@ namespace Service
 
         public void Dispose()
         {
-            _signalBus.Unsubscribe<ClosePopUpRequestSignal>(CloseOne);
+            _signalBus.Unsubscribe<ClosePopUpRequestSignal>(Close);
         }
     }
 }

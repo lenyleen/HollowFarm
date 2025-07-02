@@ -27,7 +27,7 @@ namespace Handlers.ClickHandler
                 ClickStateType.Idle => _container.Instantiate<Idle>(),
                 ClickStateType.Click => _container.Instantiate<Click>(new[] { _clickContext }),
                 ClickStateType.Hold => _container.Instantiate<Hold>(new[] { _clickContext }),
-                ClickStateType.Ui => _container.Instantiate<UiState>(new [] {(Action)(() => _uiService.CloseOne())}),
+                ClickStateType.Ui => _container.Instantiate<UiState>(new [] {(Action)(() => _uiService.Close())}),
                 _ => throw new Exception("Not implemented state")
             };
         }

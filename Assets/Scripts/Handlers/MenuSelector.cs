@@ -7,7 +7,9 @@ using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.Signals;
 using DefaultNamespace.Signals.UiSignalsParams;
 using DefaultNamespace.ViewModels;
+using DefaultNamespace.ViewModels.Interfaces;
 using DefaultNamespace.ViewModels.UiVm;
+using DefaultNamespace.ViewModels.UiVm.Params;
 using DefaultNamespace.Views.UIVIiews;
 using Service;
 using UniRx;
@@ -31,9 +33,21 @@ namespace DefaultNamespace.Handlers
         public void SelectSoilMenu(Dictionary<Vector3Int, SoilViewModel> soilVmData)
         {
            if(soilVmData.First().Value.IsOccupied)
-               _uiService.Show<InventoryItemsMenuVm<ConsumableData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()));
+               HandleOccupied(soilVmData);
            else
-               _uiService.Show<InventoryItemsMenuVm<PlantData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()));
+               HandleEmpty(soilVmData);
+               
+        }
+
+        private void HandleOccupied(Dictionary<Vector3Int, SoilViewModel> soilVmData)
+        {
+            _uiService.Show<InventoryItemsMenuVm<ConsumableData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()));
+            _uiService.Show<SoilActionMenuViewModel,SoilActionMenuParams>(new SoilActionMenuParams(soilVmData.Values));
+        }
+
+        private void HandleEmpty(Dictionary<Vector3Int, SoilViewModel> soilVmData)
+        {
+            _uiService.Show<InventoryItemsMenuVm<PlantData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()));
         }
 
         public async UniTask<SoilFilter> OpenFilterDialogMenu(Vector3 position)
