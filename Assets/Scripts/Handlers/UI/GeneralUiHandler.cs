@@ -8,9 +8,8 @@ namespace DefaultNamespace.Handlers
 {
     public class GeneralUiHandler : UiGroupHandler
     {
-        public GeneralUiHandler(Dictionary<Type, IUiElement> uiElements, 
-            Stack<IUiElement> showedUiElements, UiType type) 
-            : base(uiElements, showedUiElements, type)
+        public GeneralUiHandler(List<IUiElement> uiElements, UiType type) 
+            : base(uiElements, type)
         {
         }
 
@@ -20,6 +19,9 @@ namespace DefaultNamespace.Handlers
             
             var popUp = ShowedUiElements.Pop();
             popUp.Hide();
+
+            if (!ShowedUiElements.Any())
+                IsFilled = false;
         }
     }
 }

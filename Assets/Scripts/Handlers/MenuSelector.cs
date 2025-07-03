@@ -22,9 +22,9 @@ namespace DefaultNamespace.Handlers
     public class MenuSelector : ISoilMenuSelector
     {
         private SignalBus _signalBus;
-        private readonly IUiService _uiService;
+        private readonly IUiGroupService _uiService;
 
-        public MenuSelector(SignalBus signalBus, IUiService uiService)
+        public MenuSelector(SignalBus signalBus, IUiGroupService uiService)
         {
             _signalBus = signalBus;
             _uiService = uiService;
@@ -41,18 +41,18 @@ namespace DefaultNamespace.Handlers
 
         private void HandleOccupied(Dictionary<Vector3Int, SoilViewModel> soilVmData)
         {
-            _uiService.Show<InventoryItemsMenuVm<ConsumableData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()));
-            _uiService.Show<SoilActionMenuViewModel,SoilActionMenuParams>(new SoilActionMenuParams(soilVmData.Values));
+            _uiService.Show<InventoryItemsMenuVm<ConsumableData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()), UiType.InGameOverlay);
+            _uiService.Show<SoilActionMenuViewModel,SoilActionMenuParams>(new SoilActionMenuParams(soilVmData.Values), UiType.InGameOverlay);
         }
 
         private void HandleEmpty(Dictionary<Vector3Int, SoilViewModel> soilVmData)
         {
-            _uiService.Show<InventoryItemsMenuVm<PlantData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()));
+            _uiService.Show<InventoryItemsMenuVm<PlantData>,SoilPopupParams>(new SoilPopupParams( soilVmData.Keys.ToList()), UiType.InGameOverlay);
         }
 
         public async UniTask<SoilFilter> OpenFilterDialogMenu(Vector3 position)
         {
-            var dialog = _uiService.ShowDialogMenu<SoilFilterDialogMenu, SoilFilterParams,SoilFilter>(new SoilFilterParams(position));
+            var dialog = _uiService.ShowDialogMenu<SoilFilterDialogMenu, SoilFilterParams,SoilFilter>(new SoilFilterParams(position), UiType.InGameOverlay);
             var result = await dialog.WaitForResultAsync();
             return result;
         }

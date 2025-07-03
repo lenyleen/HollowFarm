@@ -4,6 +4,7 @@ using System.ComponentModel;
 using DefaultNamespace.Commands;
 using DefaultNamespace.DataObjects;
 using DefaultNamespace.Factory;
+using DefaultNamespace.Handlers;
 using DefaultNamespace.Models.UiModels;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.ViewModels.UiVm;
@@ -55,6 +56,7 @@ namespace DefaultNamespace.Initializers
                 .AsSingle();
 
             Container.BindInterfacesAndSelfTo<UiService>().AsSingle();
+            Container.BindInterfacesAndSelfTo<InGameOverlayUiHandler>().AsSingle().WithArguments(UiType.InGameOverlay);
             
             InitializeCommands();
             InitializeActionMenu();

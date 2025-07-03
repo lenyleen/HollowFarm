@@ -11,7 +11,8 @@ namespace DefaultNamespace.Views.UIVIiews
 {
     public class SoilActionsMenu : MovableUiElement, IUiElement, IDisposable
     {
-        [filed:SerializeField] public UiType UiType { get; private set; }
+        public UiType UiType => _type;
+        [SerializeField] private UiType _type;
         [field: SerializeField] public RectTransform GridRect { get; private set; }
         private readonly CompositeDisposable  _disposable = new();
         private List<ISoilActionButton> _buttons;

@@ -7,9 +7,8 @@ namespace DefaultNamespace.Handlers
 {
     public class InGameOverlayUiHandler : UiGroupHandler
     {
-        public InGameOverlayUiHandler(Dictionary<Type, IUiElement> uiElements, 
-            Stack<IUiElement> showedUiElements, UiType type) 
-            : base(uiElements, showedUiElements, type)
+        public InGameOverlayUiHandler(List<IUiElement> uiElements, UiType type) 
+            : base(uiElements, type)
         {
         }
 
@@ -20,6 +19,8 @@ namespace DefaultNamespace.Handlers
                 var popUp = ShowedUiElements.Pop();
                 popUp.Hide();
             }
+
+            IsFilled = false;
         }
     }
 }

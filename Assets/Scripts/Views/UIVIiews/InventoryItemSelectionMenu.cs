@@ -16,7 +16,8 @@ namespace DefaultNamespace.Views.UIVIiews
     
     public class InventoryItemSelectionMenu : MovableUiElement, IInventoryItemSelectionMenu
     {
-        [filed:SerializeField] public UiType UiType { get; private set; }
+        public UiType UiType => _type;
+        [SerializeField] private UiType _type;
         [SerializeField] private RectTransform _seedButtonContainer;
 
         private bool _isShowing;

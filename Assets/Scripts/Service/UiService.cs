@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DefaultNamespace.Handlers;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.Signals;
 using DefaultNamespace.Signals.UiSignalsParams;
@@ -10,19 +11,20 @@ using Zenject;
 
 namespace Service
 {
-    public class UiService : IUiService, IClickBlockerService, IInitializable, IDisposable
+    public class UiService : IUiGroupService, IClickBlockerService, IInitializable, IDisposable
     {
         private readonly SignalBus _signalBus;
-        private readonly Dictionary<Type, IUiElement> _uiElements;
-        private readonly Stack<IUiElement> _showedUiElements;
+        private readonly Dictionary<UiType, IUiGroupHandler> _uiGroups;
+        private readonly Stack<IUiGroupHandler> _showedGroups;
+        private IUiGroupHandler _currentGroup;
         
         public ReactiveProperty<bool> IsUiClosingClicksEnabled { get; } = new ReactiveProperty<bool>(false);
 
-        public UiService(SignalBus signalBus, List<IUiElement> uiElements)
+        public UiService(SignalBus signalBus, List<IUiGroupHandler> uiGroups)
         {
             _signalBus = signalBus;
-            _uiElements = uiElements.ToDictionary(elem => elem.GetType(), elem => elem);
-            _showedUiElements = new Stack<IUiElement>();
+            _uiGroups = uiGroups.ToDictionary(elem => elem.GroupType, elem => elem);
+            _showedGroups = new Stack<IUiGroupHandler>();
         }
 
         public void Initialize()
@@ -38,64 +40,63 @@ namespace Service
             IsUiClosingClicksEnabled.Value = enable;
         }
         
-        public void Show<TUi, TParams>(TParams args) where TUi : IUiElement<TParams>
+        public void Show<TUi, TParams>(TParams args, UiType type) where TUi : IUiElement<TParams>
         {
-            if (!_uiElements.TryGetValue(typeof(TUi), out var ui)) return;
-
-            if(_showedUiElements.Contains(ui)) return;
-            
-            if (args == null)
-                ((TUi)ui).Show();
-            else 
-                ((TUi)ui).Show(args);
-            
-            _showedUiElements.Push(ui);
-            
-            EnableClosingUiClicks(true);
+           if(!_uiGroups.TryGetValue(type, out var group))
+               throw new Exception("Group not found");
+           
+           group.Show<TUi, TParams>(args);
+           
+           EnableClosingUiClicks(true);
+           
+           if(!_showedGroups.Contains(group))
+            _showedGroups.Push(group);
         }
         
-        public TUi ShowDialogMenu<TUi, TParams, TResult>(TParams args) where TUi : IDialogMenu<TParams, TResult>
+        public TUi ShowDialogMenu<TUi, TParams, TResult>(TParams args, UiType type) where TUi : IDialogMenu<TParams, TResult>
         {
-            if (!_uiElements.TryGetValue(typeof(TUi), out var ui)) return default;
-
-            if(_showedUiElements.Contains(ui)) return (TUi)ui;
+            if(!_uiGroups.TryGetValue(type, out var group))
+                throw new Exception("Group not found");
             
-            ((TUi)ui).Show(Close,args);
+            var dialog = group.ShowDialogMenu<TUi, TParams,TResult>(args);
             
-            _showedUiElements.Push(ui);
+            if(!_showedGroups.Contains(group))
+                _showedGroups.Push(group);
+            EnableClosingUiClicks(true); 
             
-            EnableClosingUiClicks(true);
-            return (TUi)ui;
+            return dialog;
         }
         
         public void Close()
         {
-            if(!_showedUiElements.Any()) return;
-            
-            var popUp = _showedUiElements.Pop();
-            popUp.Hide();
-
-            if (_showedUiElements.Any())
-                return;
-            
-            EnableClosingUiClicks(false);
-        }
-
-        public void CloseAll()
-        {
-            foreach (var showedUiElement in _showedUiElements)
+            if (_currentGroup == null)
             {
-                showedUiElement.Hide();
+                if (!_showedGroups.TryPop(out var result))
+                    return;
+                _currentGroup = result;
             }
-            _showedUiElements.Clear();
             
+            _currentGroup.Close();
+            
+            if(_currentGroup.IsFilled) return;
+
             EnableClosingUiClicks(false);
+            _currentGroup = null;   
         }
         
-
         public void Dispose()
         {
             _signalBus.Unsubscribe<ClosePopUpRequestSignal>(Close);
+        }
+
+        public void RegisterGroup(IUiService group, UiType type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UnregisterGroup(IUiService group, UiType type)
+        {
+            throw new NotImplementedException();
         }
     }
 }

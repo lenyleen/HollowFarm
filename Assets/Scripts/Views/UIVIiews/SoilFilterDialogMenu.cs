@@ -13,7 +13,8 @@ namespace DefaultNamespace.Views.UIVIiews
 {
     public class SoilFilterDialogMenu : MonoBehaviour, IDialogMenu<SoilFilterParams,SoilFilter>
     {
-        [filed:SerializeField] public UiType UiType { get; private set; }
+        public UiType UiType => _type;
+        [SerializeField] private UiType _type;
         [SerializeField] private UnityEngine.UI.Button _emptyButton;
         [SerializeField] private UnityEngine.UI.Button _occupiedButton;
         private Action _onSelected;
