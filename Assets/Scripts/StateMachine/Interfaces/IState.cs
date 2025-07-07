@@ -8,6 +8,5 @@ namespace Handlers.ClickHandler
         public void Enter();
         public void Exit();
         public void Tick();
-        //TODO: Добавить стейт машину для обработки кликов
     }
 }

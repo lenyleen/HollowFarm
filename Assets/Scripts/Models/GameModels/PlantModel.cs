@@ -52,9 +52,15 @@ namespace DefaultNamespace.Models
             CurrentStatus.Value = PlantStatus.Harvested;
         }
         
-        public PlantHarvestedSignal Harvest()
+        public bool TryHarvest(out PlantHarvestedSignal  harvestedSignal)
         {
-            return new PlantHarvestedSignal(Data, _amount);
+            harvestedSignal = null;
+            
+            if (CurrentStatus.Value != PlantStatus.CanBeHarvested)
+                return false;
+            
+            harvestedSignal = new PlantHarvestedSignal(Data, _amount);
+            return true;
         }
     }
 }

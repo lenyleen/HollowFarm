@@ -20,7 +20,7 @@ namespace DefaultNamespace.Views.UIVIiews.Service
 
         public IObservable<SoilActionType> OnClickAsObservable => _onClickSubject;
 
-        public void Initialize(Sprite sprite, RectTransform parentTransform, SoilActionType actionType) //TODO: добавить обработку спавна картинок, чтобы все они былит +- одного размера
+        public void Initialize(Sprite sprite, RectTransform parentTransform, SoilActionType actionType) 
         {
             _button.onClick.AddListener(() => _onClickSubject.OnNext(_actionType));
             

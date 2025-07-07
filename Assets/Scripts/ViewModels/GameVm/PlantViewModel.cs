@@ -89,8 +89,10 @@ namespace DefaultNamespace.ViewModels
 
         public void Harvest()
         {
-            var signalToFire = _model.Harvest();
-            _signalBus.Fire(signalToFire);
+            if(!_model.TryHarvest(out var signal))
+                return;
+            
+            _signalBus.Fire(signal);
         }
         public void Hover(Vector3 position, int direction = 1)
         {

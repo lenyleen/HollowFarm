@@ -17,7 +17,7 @@ namespace DefaultNamespace.ViewModels.UiVm
         private readonly SoilActionsMenu _menu;
         private readonly SignalBus _signalBus;
         private readonly IFactory<IEnumerable<ICommandPerformer>, SoilActionType, ICommand<ICommandPerformer>> _commandFactory;
-        private readonly CompositeDisposable _disposable = new();
+        private CompositeDisposable _disposable = new();
         
 
         public SoilActionMenuViewModel(SoilActionsMenu menu, SignalBus signalBus,
@@ -48,6 +48,8 @@ namespace DefaultNamespace.ViewModels.UiVm
         {
             _menu.Hide();  
             _disposable.Dispose();
+
+            _disposable = new CompositeDisposable();
         }
         
         public void Dispose()

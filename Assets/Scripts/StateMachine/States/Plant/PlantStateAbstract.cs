@@ -3,6 +3,7 @@ using DefaultNamespace.Models;
 using DefaultNamespace.ScriptableObjects;
 using Handlers.ClickHandler;
 using Service;
+using UnityEngine;
 
 namespace StateMachine.States.Plant
 {
@@ -22,12 +23,14 @@ namespace StateMachine.States.Plant
         protected void Grow()
         {
             _plantStateContext.CurrentGrowthTime.Value -= TimeSpan.FromSeconds(1); //++++ бустеры
+            Debug.Log($"{_plantStateContext.CurrentGrowthTime}");
             if(_plantStateContext.CurrentGrowthTime.Value <=  TimeSpan.Zero)
                 _plantStateContext.CurrentStatus.Value = PlantStatus.CanBeHarvested;
         }
         protected void CheckWater()
         {
             var dryTime = DateTime.UtcNow - _plantStateContext.DryedAt;
+            Debug.Log($"{dryTime}");
             if(dryTime >= _plantStateContext.TimeWithoutWater)
                 _plantStateContext.CurrentStatus.Value = PlantStatus.NeedWatering;
         }
