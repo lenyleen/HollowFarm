@@ -5,39 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8f93f9e-d206-4de7-a098-ddcfaf2dfff3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/GeneralUiHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/GeneralUiHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/IUiGroupHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/IUiGroupHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/InGameOverlayUiHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/InGameOverlayUiHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/UiGroupHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/UI/UiGroupHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Service/IUiGroupService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Service/IUiGroupService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Service/UiType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Service/UiType.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/AddWaterCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/AddWaterCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/CommandAbstract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/CommandAbstract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/HarvestCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/HarvestCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/RemoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/RemoveCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Factory/PlantSpawnService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Factory/PlantSpawnService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Handlers/MenuSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/MenuSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Initializers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Initializers/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Initializers/UiInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Initializers/UiInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/SoilActionsButtonsData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/SoilActionsButtonsData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Service/IUiService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Service/IUiService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Service/UiService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Service/UiService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/StateFactories/ClickStateFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/StateFactories/ClickStateFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/IUiElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/IUiElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/InventoryItemsMenuVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/InventoryItemsMenuVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/Params/SoilActionMenuParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/Params/SoilActionMenuParams.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/SoilActionMenuViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/SoilActionMenuViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/PlantView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/PlantView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/Interfaces/IInventoryItemSelectionMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/Interfaces/IInventoryItemSelectionMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/InventoryItemSelectionMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/InventoryItemSelectionMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/Service/SoilActionButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/Service/SoilActionButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/SoilActionsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/SoilActionsMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/SoilFilterDialogMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/SoilFilterDialogMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Handlers/PlantStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/PlantStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Handlers/TimeHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/TimeHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Initializers/FarmInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Initializers/FarmInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/PlantModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/PlantModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/Soil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/Soil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Interfaces/ITimeUpdatable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Interfaces/ITimeUpdatable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Service/PlantStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Service/PlantStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Interfaces/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Interfaces/IState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Click.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Click.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Hold.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Hold.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Idle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Idle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/UiClickState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/UiClickState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/CanBeHarwested.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/CanBeHarwested.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Died.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Died.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Growing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Growing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/NeedWater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/NeedWater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/PlantStateAbstract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/PlantStateAbstract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/PlantViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/PlantViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/PlantUiView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/PlantUiView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UISprites/Icons 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UISprites/Icons 1.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +58,10 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b0abb3ee07540c9ba0a6f956a37c9e315200/d2/2ff840df/_003CPrivateImplementationDetails_003E.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/afa60f2da52c45bd9a002fa6beffa36b1ffe00/c4/2bb002e5/LayoutDataStore.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Handlers/PlantSeedHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Handlers/UI/IUiGroupHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/SoilActionsButtonsData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Signals/PlantSeedSignal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Views/GameViews/PlantView.cs" root0="FORCE_HIGHLIGHTING" />
@@ -133,10 +129,10 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8376">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18240">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8376" />
+      <option name="pid" value="18240" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -177,7 +173,8 @@
       <workItem from="1751373265995" duration="680000" />
       <workItem from="1751373994541" duration="9526000" />
       <workItem from="1751441641279" duration="3397000" />
-      <workItem from="1751447729659" duration="8767000" />
+      <workItem from="1751447729659" duration="9452000" />
+      <workItem from="1751962582238" duration="12239000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial project files and version 0.1.0">
       <option name="closed" value="true" />
@@ -195,7 +192,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751384387926</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add UI handling and structure for soil actions and groups">
+      <option name="closed" value="true" />
+      <created>1751488895929</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751488895929</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add SoilActionButton prefab and associated data assets">
+      <option name="closed" value="true" />
+      <created>1751488957763</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751488957763</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +253,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -260,7 +273,9 @@
     <MESSAGE value="Initialize fixed soil action commands and integrate with command factory" />
     <MESSAGE value="Add initial project files and version 0.1.0" />
     <MESSAGE value="Add actions handling to Plant" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add actions handling to Plant" />
+    <MESSAGE value="Add UI handling and structure for soil actions and groups" />
+    <MESSAGE value="Add SoilActionButton prefab and associated data assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add SoilActionButton prefab and associated data assets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -270,6 +285,32 @@
           <line>29</line>
           <properties documentPath="E:\UnityProjects\HollowFram\Assets\Plugins\D.A. Assets\Figma Converter for Unity\Scripts\Web\Authorizer.cs" containingFunctionPresentation="Method 'Auth'" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Models/GameModels/Soil.cs</url>
+          <line>59</line>
+          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\Models\GameModels\Soil.cs" containingFunctionPresentation="Method 'Water'">
+            <startOffsets>
+              <option value="1881" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1896" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Handlers/TimeHandler.cs</url>
+          <line>44</line>
+          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\Handlers\TimeHandler.cs" containingFunctionPresentation="Method 'FixedTick'">
+            <startOffsets>
+              <option value="1338" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1364" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
           <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />

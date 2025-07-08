@@ -28,6 +28,9 @@ namespace Handlers.ClickHandler.States
             _onClicked?.Invoke();
         }
 
+        public void FixedTick()
+        {}
+
         private bool IsPointerOverUI()
         {
             PointerEventData pointerData = new PointerEventData(EventSystem.current)

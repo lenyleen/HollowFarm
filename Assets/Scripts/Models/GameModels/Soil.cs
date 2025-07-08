@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace DefaultNamespace.Models
 {
-    public class Soil : ITimeUpdatable, IPlantSoilConext
+    public class Soil : IPlantSoilConext
     {
         public bool IsOccupied => _plant != null;
         private readonly SoilData _soilData; 
@@ -62,7 +62,7 @@ namespace DefaultNamespace.Models
             
             IsWatered = true;
             _wateredTime = TimeSpan.FromMinutes(_soilData.wateredDurationInMinutes);
-            // Логика для увеличения влаги в почве
+            _plant.AddWater(_wateredTime);
         }
 
         public void RemovePlant()

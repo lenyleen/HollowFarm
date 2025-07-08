@@ -58,10 +58,16 @@ namespace DefaultNamespace.Handlers
        
         public void UpdateTime()
         {
-            _stateMachine.CurrentState.Tick();
+           _stateMachine.CurrentState.Tick();
+        }
+
+        public void FixedUpdateTime()
+        {
+            _stateMachine.CurrentState.FixedTick();
             second++;
             Debug.Log(second);
         }
+
         public void Dispose()
         {
             _timeHandler.Unsubscribe(this);

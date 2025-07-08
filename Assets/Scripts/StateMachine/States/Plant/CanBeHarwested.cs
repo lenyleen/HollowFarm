@@ -14,15 +14,20 @@ namespace StateMachine.States.Plant
         public override event Action<PlantStatus> OnChangeState;
         public override void Enter()
         {
+            _plantStateContext.CurrentStatus.Value = PlantStatus.CanBeHarvested;
         }
 
         public override void Exit()
         {
         }
 
+        public override void FixedTick()
+        {
+        }
+
         public override void Tick()
         {
-            CheckWater();
+            
         }
     }
 }

@@ -57,6 +57,9 @@ namespace Handlers.ClickHandler.States
             _context.StartTile = null;
         }
 
+        public void FixedTick()
+        { }
+
         public void Exit()
         {
            

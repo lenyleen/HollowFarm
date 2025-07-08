@@ -1,10 +1,11 @@
 using Service;
+using Zenject;
 
 namespace DefaultNamespace.Commands
 {
     public class HarvestCommand : CommandAbstract
     {
-        public HarvestCommand(SoilActionType action) : base(action)
+        public HarvestCommand(SoilActionType action, SignalBus signalBus) : base(action, signalBus)
         {
         }
 
@@ -14,6 +15,7 @@ namespace DefaultNamespace.Commands
             {
                 commandPerformer.Harvest();
             }
+            CommandPerformed();
         }
     }
 }

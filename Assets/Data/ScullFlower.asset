@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 0
   startGrowthState: 0
-  growthDurationInMinutes: 5
+  growthDurationInMinutes: 1
   byMoonGrowthMultiplier: 1.05
   byWaterGrowthMultiplier: 1.05
   SpritesByPhase:

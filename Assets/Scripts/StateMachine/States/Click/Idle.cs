@@ -15,6 +15,9 @@ namespace Handlers.ClickHandler.States
             OnChangeState?.Invoke(ClickStateType.Click);
         }
 
+        public void FixedTick()
+        {}
+
         public void Exit()
         { }
 

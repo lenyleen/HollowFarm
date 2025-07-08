@@ -40,14 +40,10 @@ namespace DefaultNamespace.Factory
         {
             var model = new PlantModel(plantData);
             soilModel.SetPlantModel(model);
-
-            var stateMachine = new PlantModelSM<IState<PlantStatus>>();
-            var stateModelController = _container.Instantiate<PlantStateController>(new object[] { model, stateMachine });
-            stateModelController.Initialize();
             
             var plantViewModel = new PlantViewModel(model, _signalBus);
-            plantViewModel.Initialize();
-
+            
+            
             var images = new Dictionary<PlantStatus, Image>();
             foreach (var statusIcon in _plantStatusIconData.statusIcons)
             {
@@ -63,6 +59,13 @@ namespace DefaultNamespace.Factory
                 model.Data.LightColor, model.Data.SpritesByPhase[0], images);
             
             _views.Add(plantViewModel, plantView);
+            
+            var stateMachine = new PlantModelSM<IState<PlantStatus>>();
+            var stateModelController =
+                _container.Instantiate<PlantStateController>(new object[] { model, stateMachine });
+            stateModelController.Initialize();
+            
+            plantViewModel.Initialize();
             return plantViewModel;
         }
 

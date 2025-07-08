@@ -39,6 +39,7 @@ namespace DefaultNamespace.Initializers
             Container.DeclareSignal<SpawnTimeRequestSignal>();
             Container.DeclareSignal<SoilMenuClosed>();
             Container.DeclareSignal<ClosePopUpRequestSignal>();
+            Container.DeclareSignal<PlantHarvestedSignal>();
         }
     }
     [Serializable]

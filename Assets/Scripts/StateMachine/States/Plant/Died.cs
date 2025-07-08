@@ -17,6 +17,7 @@ namespace StateMachine.States.Plant
         
         public override void Enter()
         {
+            _plantStateContext.CurrentStatus.Value = PlantStatus.Died;
             Debug.Log("died");
         }
 
@@ -24,8 +25,13 @@ namespace StateMachine.States.Plant
         {
         }
 
+        public override void FixedTick()
+        {
+        }
+
         public override void Tick()
         {
+            
         }
     }
 }

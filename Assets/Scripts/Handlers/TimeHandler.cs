@@ -6,7 +6,7 @@ using Zenject;
 
 namespace DefaultNamespace.Handlers
 {
-    public class TimeHandler : ITickable, ITimeHandler
+    public class TimeHandler : ITickable, ITimeHandler, IFixedTickable
     {
         private float _accumulatedTime = 0f;
         private bool _isRunning = false;
@@ -21,6 +21,15 @@ namespace DefaultNamespace.Handlers
 
         public void Tick()
         {
+            foreach (var updatable in _updatables)
+            {
+                _isRunning = true;
+                updatable.UpdateTime();
+            }
+        }
+
+        public void FixedTick()
+        {
             _accumulatedTime += Time.deltaTime;
 
             if (!(_accumulatedTime >= 1f)) return;
@@ -28,7 +37,7 @@ namespace DefaultNamespace.Handlers
             foreach (var updatable in _updatables)
             {
                 _isRunning = true;
-                updatable.UpdateTime();
+                updatable.FixedUpdateTime();
             }
 
             _accumulatedTime = 0f;
@@ -71,8 +80,7 @@ namespace DefaultNamespace.Handlers
 
             foreach (var updatable in _scheduledToRemoveUpdatables)
             {
-                if(updatable == null)
-                    _updatables.Remove(updatable);
+                _updatables.Remove(updatable);
             }
 
             _scheduledToRemoveUpdatables.Clear();

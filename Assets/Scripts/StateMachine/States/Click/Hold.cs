@@ -43,6 +43,9 @@ namespace Handlers.ClickHandler.States
             FinalizeSelection(_currentSelection);
         }
 
+        public void FixedTick()
+        {}
+
         public void Exit()
         {
             _tilemap.RefreshAllTiles();

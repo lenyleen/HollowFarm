@@ -19,6 +19,7 @@ namespace StateMachine.States.Plant
 
         public abstract void Enter();
         public abstract void Exit();
+        public abstract void FixedTick();
 
         protected void Grow()
         {
@@ -31,6 +32,7 @@ namespace StateMachine.States.Plant
         {
             var dryTime = DateTime.UtcNow - _plantStateContext.DryedAt;
             Debug.Log($"{dryTime}");
+            
             if(dryTime >= _plantStateContext.TimeWithoutWater)
                 _plantStateContext.CurrentStatus.Value = PlantStatus.NeedWatering;
         }

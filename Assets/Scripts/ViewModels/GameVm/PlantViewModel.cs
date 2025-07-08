@@ -18,7 +18,7 @@ namespace DefaultNamespace.ViewModels
         private readonly CompositeDisposable _disposable = new();
         private readonly PlantModel _model;
         private readonly SignalBus _signalBus;
-        private PlantStatus _currentMainStatus;
+        private PlantStatus _currentMainStatus = PlantStatus.None;
         public ReactiveProperty<Sprite> GrowthStage { get;}
         public ReactiveCollection<PlantStatus> StatusIcons { get; } = new (new HashSet<PlantStatus>());
         public ReactiveProperty<bool> IsHovered { get; } = new(false);
@@ -52,6 +52,8 @@ namespace DefaultNamespace.ViewModels
                 if (_model.Boosters.Count == 0)
                     StatusIcons.Remove(PlantStatus.Boosted);
             }).AddTo(_disposable);
+            
+            UpdateMainIcon(PlantStatus.Growing);
         }
         
         private void UpdateSpriteByGrowth(TimeSpan time)
@@ -62,10 +64,9 @@ namespace DefaultNamespace.ViewModels
 
             var sprite = percent switch
             {
-                <= 0.33 => GrowthStage.Value = _model.Data.SpritesByPhase[0],
-                0.66 => GrowthStage.Value = _model.Data.SpritesByPhase[1],
-                < 1.0 => GrowthStage.Value = _model.Data.SpritesByPhase[2],
-                _ => GrowthStage.Value = _model.Data.SpritesByPhase[2]
+                <= 0.66 =>  GrowthStage.Value = _model.Data.SpritesByPhase[0],
+                < 1.0  => GrowthStage.Value = _model.Data.SpritesByPhase[1],
+                > 1.0 => GrowthStage.Value = _model.Data.SpritesByPhase[2]
             };
             
             if(GrowthStage.Value != sprite)
@@ -84,6 +85,8 @@ namespace DefaultNamespace.ViewModels
                 return;
             
             StatusIcons.Remove(_currentMainStatus);
+
+            _currentMainStatus = status;
             StatusIcons.Add(status);
         }
 

@@ -7,6 +7,7 @@
         NeedWatering,
         CanBeHarvested,
         Died,
-        Harvested
+        Harvested,
+        None
     }
 }

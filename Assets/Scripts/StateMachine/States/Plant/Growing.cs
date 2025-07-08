@@ -17,13 +17,18 @@ namespace StateMachine.States.Plant
         }
         public override void Enter()
         {
+            _plantStateContext.CurrentStatus.Value = PlantStatus.Growing;
             Debug.Log("Grow");
         }
-        public override void Tick()
+
+        public override void FixedTick()
         {
             CheckWater(); 
             Grow();
         }
+
+        public override void Tick()
+        { }
         
         public override void Exit()
         {

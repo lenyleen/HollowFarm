@@ -24,7 +24,6 @@ namespace DefaultNamespace.Views.UIVIiews
                 image.Value.transform.SetParent(_gridTransform, false);
             }
             ClearStatusIcons();
-            
         }
 
         public void SpriteChanged(float height)
