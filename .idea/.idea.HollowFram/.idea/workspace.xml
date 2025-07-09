@@ -6,31 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a8f93f9e-d206-4de7-a098-ddcfaf2dfff3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/AddWaterCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/AddWaterCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/CommandAbstract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/CommandAbstract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/HarvestCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/HarvestCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Commands/RemoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Commands/RemoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Factory/PlantSpawnService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Factory/PlantSpawnService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Handlers/PlantStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/PlantStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Handlers/TimeHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/TimeHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Initializers/FarmInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Initializers/FarmInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/PlantModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/PlantModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/Soil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/Soil.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Interfaces/ITimeUpdatable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Interfaces/ITimeUpdatable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Service/PlantStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Service/PlantStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Interfaces/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/Interfaces/IState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Click.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Click.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Hold.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Hold.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Idle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/Idle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/UiClickState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Click/UiClickState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/CanBeHarwested.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/CanBeHarwested.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Died.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Died.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Growing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Growing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/NeedWater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/NeedWater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/PlantStateAbstract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/PlantStateAbstract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/PlantViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/PlantViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/PlantUiView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/PlantUiView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UISprites/Icons 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UISprites/Icons 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/New Material.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,15 +106,13 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18240">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="18240" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -174,7 +149,7 @@
       <workItem from="1751373994541" duration="9526000" />
       <workItem from="1751441641279" duration="3397000" />
       <workItem from="1751447729659" duration="9452000" />
-      <workItem from="1751962582238" duration="12239000" />
+      <workItem from="1751962582238" duration="13287000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial project files and version 0.1.0">
       <option name="closed" value="true" />
@@ -208,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751488957763</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add FixedTick method to state classes and update PlantStatus handling, Add potion liquid shader">
+      <option name="closed" value="true" />
+      <created>1751987416712</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751987416712</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +258,8 @@
     <MESSAGE value="Add actions handling to Plant" />
     <MESSAGE value="Add UI handling and structure for soil actions and groups" />
     <MESSAGE value="Add SoilActionButton prefab and associated data assets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add SoilActionButton prefab and associated data assets" />
+    <MESSAGE value="Add FixedTick method to state classes and update PlantStatus handling, Add potion liquid shader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add FixedTick method to state classes and update PlantStatus handling, Add potion liquid shader" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

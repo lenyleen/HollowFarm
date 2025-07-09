@@ -16,7 +16,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3007
+  m_CustomRenderQueue: 2977
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -26,6 +26,26 @@ Material:
     m_TexEnvs:
     - _AlphaTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BubbleGradient:
+        m_Texture: {fileID: 2800000, guid: d5520ab237dc14446825f263d636f44d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Bubble_00ae8ac924fa4eb5a443ad3abd4cd442_BubbleGradient_2102998072_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 130106522f06d3d4ca5a9144f37bcabe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Bubble_3df277023b114e8b8885add539e8b1df_BubbleGradient_2102998072_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 130106522f06d3d4ca5a9144f37bcabe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Bubble_e057af43d27942889207efc567ca67dd_BubbleGradient_2102998072_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 130106522f06d3d4ca5a9144f37bcabe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Bubble_e11ef05152c04ed098cbfb0c4751314b_BubbleGradient_2102998072_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 130106522f06d3d4ca5a9144f37bcabe, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Liquid:
@@ -48,6 +68,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 3419db5477582d740b574d3276881751, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b310cd41f9a742d2af7c7af4354c927f_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 130106522f06d3d4ca5a9144f37bcabe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -64,17 +88,18 @@ Material:
     m_Floats:
     - _Amplitude: 0.05
     - _BubbleLifeTime: 10
-    - _BubbleRadius: 0.04
-    - _BubbleSpeed: 0.08
-    - _BubbleX: 0.5
+    - _BubbleRadius: 0.06
+    - _BubbleSpeed: 0.68
+    - _BubbleX: 1.05
     - _EnableExternalAlpha: 0
     - _FillLvl: 0.69
     - _QueueControl: 0
-    - _QueueOffset: 7
+    - _QueueOffset: -23
     - _ZWrite: 0
     - _frequency: 3.4
-    - _speed: 0.62
+    - _speed: 0.51
     m_Colors:
+    - _BubbleColor: {r: 0.14551443, g: 0.2264151, b: 0.13990745, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
