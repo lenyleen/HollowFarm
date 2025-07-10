@@ -1,3 +1,251 @@
 //TODO
 1. Дальше делаю собирание, и правки по этому коду
 2. Зельеваренье
+using UnityEngine;
+
+namespace DefaultNamespace.ScriptableObjects
+{
+    [CreateAssetMenu(fileName = "PlantModifierData", menuName = "Game/Plant Modifier Data")]
+    public class PlantModifierData : ScriptableObject
+    {
+        [Header("Основные параметры")]
+        [SerializeField] private string modifierName;
+        [SerializeField] private float duration = 60f;
+        [SerializeField] private PlantProperty property;
+        
+        [Header("Значение модификатора")]
+        [SerializeField] private ModifierValueType valueType;
+        [SerializeField] private float floatValue = 1f;
+        [SerializeField] private bool boolValue = true;
+        [SerializeField] private AnimationCurve curve = AnimationCurve.Linear(0, 1, 1, 1);
+
+        public string ModifierName => modifierName;
+        public float Duration => duration;
+        public PlantProperty Property => property;
+        public ModifierValueType ValueType => valueType;
+        public float FloatValue => floatValue;
+        public bool BoolValue => boolValue;
+        public AnimationCurve Curve => curve;
+    }
+
+    public enum ModifierValueType
+    {
+        Float,
+        Bool
+    }
+}
+
+2. Обновленные модификаторы
+// Assets/Scripts/Models/Effects/Modifiers/FloatModifier.cs
+using DefaultNamespace.ScriptableObjects;
+
+namespace DefaultNamespace.Models.Effects.Modifiers
+{
+    public class FloatModifier : PlantModifierBase<float>
+    {
+        public FloatModifier(PlantModifierData data) : base(data.ModifierName, data.FloatValue, data.Duration)
+        {
+            Property = data.Property;
+        }
+
+        public override PlantProperty Property { get; }
+
+        public override float ApplyToValue(float baseValue) => baseValue * Value;
+
+        public override void Apply(PlantModel plant)
+        {
+            IsActive = true;
+            RemainingTime = Duration;
+        }
+
+        public override void Remove(PlantModel plant)
+        {
+            IsActive = false;
+        }
+    }
+}
+
+// Assets/Scripts/Models/Effects/Modifiers/BoolModifier.cs
+using DefaultNamespace.ScriptableObjects;
+
+namespace DefaultNamespace.Models.Effects.Modifiers
+{
+    public class BoolModifier : PlantModifierBase<bool>
+    {
+        public BoolModifier(PlantModifierData data) : base(data.ModifierName, data.BoolValue, data.Duration)
+        {
+            Property = data.Property;
+        }
+
+        public override PlantProperty Property { get; }
+
+        public override bool ApplyToValue(bool baseValue) => Value;
+
+        public override void Apply(PlantModel plant)
+        {
+            IsActive = true;
+            RemainingTime = Duration;
+        }
+
+        public override void Remove(PlantModel plant)
+        {
+            IsActive = false;
+        }
+    }
+}
+
+// Assets/Scripts/Factory/PlantModifierFactory.cs
+using DefaultNamespace.Models.Effects.Modifiers;
+using DefaultNamespace.ScriptableObjects;
+using System.Collections.Generic;
+
+namespace DefaultNamespace.Factory
+{
+    public class PlantModifierFactory
+    {
+        public List<IPlantModifier> CreateModifiers(List<PlantModifierData> modifierDataList)
+        {
+            var modifiers = new List<IPlantModifier>();
+            
+            foreach (var data in modifierDataList)
+            {
+                var modifier = CreateModifier(data);
+                if (modifier != null)
+                {
+                    modifiers.Add(modifier);
+                }
+            }
+            
+            return modifiers;
+        }
+
+        private IPlantModifier CreateModifier(PlantModifierData data)
+        {
+            return data.ValueType switch
+            {
+                ModifierValueType.Float => new FloatModifier(data),
+                ModifierValueType.Bool => new BoolModifier(data),
+                _ => null
+            };
+        }
+    }
+}
+
+// Assets/Scripts/ScriptableObjects/ConsumableData.cs
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace DefaultNamespace.ScriptableObjects
+{
+    [CreateAssetMenu(fileName = "ConsumableData", menuName = "Game/Consumable Data")]
+    public class ConsumableData : ScriptableObject
+    {
+        [Header("Основные параметры")]
+        [SerializeField] private string consumableName;
+        [SerializeField] private string description;
+        [SerializeField] private Sprite icon;
+        
+        [Header("Модификаторы")]
+        [SerializeField] private List<PlantModifierData> modifiers = new List<PlantModifierData>();
+
+        public string ConsumableName => consumableName;
+        public string Description => description;
+        public Sprite Icon => icon;
+        public IReadOnlyList<PlantModifierData> Modifiers => modifiers.AsReadOnly();
+    }
+}
+
+// Assets/Scripts/Models/Enums/PlantProperty.cs
+public enum PlantProperty
+{
+    GrowthSpeed,
+    WaterRetention,
+    HarvestMultiplier,
+    CanRevive,
+    IsImmortal,
+    AutoWater
+}
+
+// Assets/Scripts/Models/GameModels/PlantModel.cs
+public class PlantModel : IPlantModifierApplicable
+{
+    private readonly Dictionary<PlantProperty, List<IPlantModifier>> _modifiers =
+        new Dictionary<PlantProperty, List<IPlantModifier>>();
+
+    private readonly Dictionary<PlantProperty, object> _baseValues =
+        new Dictionary<PlantProperty, object>
+        {
+            { PlantProperty.GrowthSpeed, 1f },
+            { PlantProperty.WaterRetention, 1f },
+            { PlantProperty.HarvestMultiplier, 1f },
+            { PlantProperty.CanRevive, false },
+            { PlantProperty.IsImmortal, false },
+            { PlantProperty.AutoWater, false }
+        };
+
+    public T GetProperty<T>(PlantProperty property)
+    {
+        if (!_baseValues.TryGetValue(property, out var baseValue))
+            return default(T);
+
+        T value = (T)baseValue;
+        
+        if (_modifiers.TryGetValue(property, out var mods))
+        {
+            foreach (var mod in mods)
+            {
+                if (mod.IsActive)
+                {
+                    if (mod is IPlantModifier<T> typedMod)
+                    {
+                        value = typedMod.ApplyToValue(value);
+                    }
+                }
+            }
+        }
+        
+        return value;
+    }
+
+    // Удобные свойства для часто используемых значений
+    public float GrowthSpeed => GetProperty<float>(PlantProperty.GrowthSpeed);
+    public float WaterRetention => GetProperty<float>(PlantProperty.WaterRetention);
+    public float HarvestMultiplier => GetProperty<float>(PlantProperty.HarvestMultiplier);
+    public bool CanRevive => GetProperty<bool>(PlantProperty.CanRevive);
+    public bool IsImmortal => GetProperty<bool>(PlantProperty.IsImmortal);
+    public bool AutoWater => GetProperty<bool>(PlantProperty.AutoWater);
+
+    public void ApplyModifier(IPlantModifier modifier)
+    {
+        if (!_modifiers.ContainsKey(modifier.Property))
+            _modifiers[modifier.Property] = new List<IPlantModifier>();
+            
+        _modifiers[modifier.Property].Add(modifier);
+        modifier.Apply(this);
+    }
+
+    public void RemoveModifier(IPlantModifier modifier)
+    {
+        if (_modifiers.TryGetValue(modifier.Property, out var mods))
+        {
+            mods.Remove(modifier);
+            modifier.Remove(this);
+        }
+    }
+
+    public void UpdateModifiers(float deltaTime)
+    {
+        foreach (var mods in _modifiers.Values)
+        {
+            for (int i = mods.Count - 1; i >= 0; i--)
+            {
+                mods[i].Update(deltaTime);
+                if (!mods[i].IsActive)
+                    mods.RemoveAt(i);
+            }
+        }
+    }
+}
+
+
+Consumable data хранит Modifiers data, при юзе консюмабла вызывается сигнал до BoosterApplicationHandler, который вызывает команду в Plant modifierService, который вызывает PlantModel и обновляет время бустеров.

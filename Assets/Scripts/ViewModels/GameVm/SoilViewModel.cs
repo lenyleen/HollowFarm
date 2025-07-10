@@ -53,9 +53,13 @@ namespace DefaultNamespace.ViewModels
         {
             // TODO release managed resources here
         }
-        public class Factory : PlaceholderFactory<Soil,SoilViewModel> { }
-
+        
         public void AddWater() => _model.Water();
+
+        public void ApplyBooster(ConsumableData  consumableData)
+        {
+            
+        }
 
         public void Remove()
         {
@@ -63,7 +67,7 @@ namespace DefaultNamespace.ViewModels
             _plantViewModel = null;
             _model.RemovePlant();
         }
-
+        //TODO: Возможно нужно вынести логику с растение в отдельный сервис, вм должна заниматься только юи?
         public void Harvest()
         {
             _plantViewModel.Harvest();
@@ -71,5 +75,6 @@ namespace DefaultNamespace.ViewModels
             _plantViewModel = null;
             _model.RemovePlant(); ;
         }
+        public class Factory : PlaceholderFactory<Soil,SoilViewModel> { }
     }
 }

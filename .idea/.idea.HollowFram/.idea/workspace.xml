@@ -5,9 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8f93f9e-d206-4de7-a098-ddcfaf2dfff3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Commands.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Commands/ApplyBoosterCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Commands/ApplyBoosterCommand.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Factory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Factory/PlantModifierFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Factory/PlantModifierFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Handlers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Handlers/BoosterApplicationHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Handlers/BoosterApplicationHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IModifierTargetHolder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IModifierTargetHolder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifier.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifier.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifierApplicable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifierApplicable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifierService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifierService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/PlantModifier.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/PlantModifier.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/ScriptableObjects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/ScriptableObjects/PlantModifierData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/ScriptableObjects/PlantModifierData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Service.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Service/PlantModifierService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Service/PlantModifierService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Signals.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Signals/ApplyBoosterSignal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Signals/ApplyBoosterSignal.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ConsumableData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ConsumableData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/SoilViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/SoilViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ChatGPT Image 8 июл. 2025 г., 15_07_452.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ChatGPT Image 8 июл. 2025 г., 15_07_452.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/grad2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/grad2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/grad3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/grad3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/grad4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/grad4.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +87,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b0abb3ee07540c9ba0a6f956a37c9e315200/d2/2ff840df/_003CPrivateImplementationDetails_003E.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/afa60f2da52c45bd9a002fa6beffa36b1ffe00/c4/2bb002e5/LayoutDataStore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters/GrowthSpeedModifier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters/Handlers/BoosterApplicationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Handlers/PlantSeedHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Handlers/UI/IUiGroupHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/SoilActionsButtonsData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Signals/PlantSeedSignal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/Died.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Views/GameViews/PlantView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Views/GameViews/SoilTileHoverVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -150,6 +204,8 @@
       <workItem from="1751441641279" duration="3397000" />
       <workItem from="1751447729659" duration="9452000" />
       <workItem from="1751962582238" duration="13287000" />
+      <workItem from="1752079362791" duration="70000" />
+      <workItem from="1752135684395" duration="8074000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial project files and version 0.1.0">
       <option name="closed" value="true" />
@@ -191,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751987416712</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed potion liquid shader, add materials for potions">
+      <option name="closed" value="true" />
+      <created>1752079425265</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752079425265</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +323,8 @@
     <MESSAGE value="Add UI handling and structure for soil actions and groups" />
     <MESSAGE value="Add SoilActionButton prefab and associated data assets" />
     <MESSAGE value="Add FixedTick method to state classes and update PlantStatus handling, Add potion liquid shader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add FixedTick method to state classes and update PlantStatus handling, Add potion liquid shader" />
+    <MESSAGE value="Fixed potion liquid shader, add materials for potions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed potion liquid shader, add materials for potions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
