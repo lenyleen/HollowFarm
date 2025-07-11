@@ -248,4 +248,7 @@ public class PlantModel : IPlantModifierApplicable
 }
 
 
-Consumable data хранит Modifiers data, при юзе консюмабла вызывается сигнал до BoosterApplicationHandler, который вызывает команду в Plant modifierService, который вызывает PlantModel и обновляет время бустеров.
+Consumable data хранит Modifiers data, при юзе консюмабла вызывается сигнал до BoosterApplicationHandler,
+ который вызывает команду в Plant modifierService, который вызывает PlantModel и обновляет время бустеров.
+ 
+ 3. Инит бустер системы, попробовать ее в деле, добавить шейдер на растение (+ смешение цвета в зависимости от бафов)

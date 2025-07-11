@@ -1,13 +1,20 @@
-﻿using DefaultNamespace.Models;
+using System;
+using DefaultNamespace.Boosters.ScriptableObjects;
+using UnityEngine;
 
 namespace DefaultNamespace.Boosters.Interfaces
 {
     public interface IPlantModifier
     {
         public string Name { get; }
-        public float Duration { get; }
         public bool IsActive { get; }
-        
-        public 
+        public Color Color { get; }
+        public int Rating { get; }
+        public float Value { get; }
+        public TimeSpan RemainingTime { get; }
+
+        public void Update(float deltaTime);
+        public bool IsGreater(PlantModifierData modifierData);
+        public float CalculateUtility();
     }
 }

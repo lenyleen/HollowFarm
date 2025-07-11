@@ -1,7 +1,9 @@
-﻿namespace DefaultNamespace.Boosters.Interfaces
+﻿using System;
+
+namespace DefaultNamespace.Boosters.Interfaces
 {
-    public class IModifierTargetHolder
-    {
-        public IPlantModifierApplicable ModifierApplicable { get; }
+    public interface IModifierTargetHolder
+    { 
+        public event Action<IPlantModifierApplicable> OnModifierApplied;
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using DefaultNamespace.Boosters.Interfaces;
+using DefaultNamespace.Boosters.Service;
 using DefaultNamespace.Factory;
 using DefaultNamespace.Models;
 using DefaultNamespace.ScriptableObjects;
@@ -19,17 +21,20 @@ namespace DefaultNamespace.ViewModels
         private readonly SignalBus _signalBus;
         private readonly HoverVisualizerService _hoverVisualizer;
         private readonly IPlantSpawnService _plantSpawnService;
+        private readonly IPlantModifierService _plantModifierService;
         
         private PlantViewModel _plantViewModel; 
         public bool IsOccupied => _model.IsOccupied;
+        public IPlantModifierService BoosterService => _plantModifierService;
 
         public SoilViewModel(Soil soil, HoverVisualizerService hoverVisualizer, IPlantSpawnService plantSpawnService,
-            SignalBus signalBus)
+            SignalBus signalBus, IPlantModifierService plantModifierService)
         {
             _model = soil;
             _hoverVisualizer = hoverVisualizer;
             _plantSpawnService = plantSpawnService;
             _signalBus = signalBus;
+            _plantModifierService = plantModifierService;
         }
 
         public void Initialize()

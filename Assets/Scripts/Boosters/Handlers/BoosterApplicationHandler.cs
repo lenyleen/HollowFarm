@@ -1,5 +1,4 @@
-﻿using DefaultNamespace.Boosters.Commands;
-using DefaultNamespace.Boosters.Factory;
+﻿using DefaultNamespace.Boosters.Factory;
 using DefaultNamespace.Boosters.Signals;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.ViewModels;
@@ -9,12 +8,9 @@ namespace DefaultNamespace.Boosters.Handlers
 {
     public class BoosterApplicationHandler
     {
-        private readonly PlantModifierFactory _factory;
         private readonly SignalBus _signalBus;
-
-        public BoosterApplicationHandler(PlantModifierFactory factory, SignalBus signalBus)
+        public BoosterApplicationHandler(SignalBus signalBus)
         {
-            _factory = factory;
             _signalBus = signalBus;
         }
 
@@ -30,8 +26,8 @@ namespace DefaultNamespace.Boosters.Handlers
 
         private void CreateAndExecuteCommand(SoilViewModel soilViewModel, ConsumableData boosterData)
         {
-            var command = new ApplyBoosterCommand(soilViewModel, boosterData, _factory);
-            command.Execute();
+            var boosterService = soilViewModel.BoosterService;
+            boosterService.ApplyModifiers(boosterData);
         }
         
         public void Dispose()

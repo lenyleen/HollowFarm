@@ -1,51 +1,56 @@
-﻿using DefaultNamespace.Boosters.Interfaces;
+﻿using System;
+using DefaultNamespace.Boosters.Interfaces;
+using DefaultNamespace.Boosters.ScriptableObjects;
 using DefaultNamespace.Models;
 using DefaultNamespace.ScriptableObjects;
 using UnityEngine;
 
 namespace DefaultNamespace.Boosters
 {
-    public abstract class PlantModifier : IPlantModifier
+    public class PlantModifier : IPlantModifier
     {
-        protected readonly string _name;
-        protected readonly float _duration;
-        protected readonly float _value;
-        protected readonly Color _color;
+        private readonly string _name;
+        private readonly float _duration;
+        private readonly Color _color;
+        private readonly float _value;
+        private readonly int _rating;
+        private bool _isActive;
+        private TimeSpan _remainingTime;
         
-        protected bool _isActive;
-
         public string Name => _name;
-        public float Duration => _duration;
         public bool IsActive => _isActive;
-        
-        protected PlantModifier(ModifierData data)
+        public Color Color => _color;
+        public float Value => _value;
+        public int Rating => _rating;
+        public TimeSpan RemainingTime => _remainingTime;
+
+        public PlantModifier(PlantModifierData data)
         {
-            _name = data.Type.ToString();
-            _duration = data.Value;
+            _name = data.Name;
+            _duration = data.Duration;
             _value = data.Value;
             _color = data.Color;
-            _remainingTime = _duration;
             _isActive = false;
-        }
-        
-        public void Apply(PlantModel plant)
-        {
-            
-        }
-
+            _remainingTime = TimeSpan.FromSeconds(_duration);
+        } 
         public void Update(float deltaTime)
         {
-            
+            _remainingTime -= TimeSpan.FromSeconds(deltaTime);
         }
 
-        public void Remove(PlantModel plant)
+        public bool IsGreater(PlantModifierData modifierData)
         {
-            
-        }
+            var utility = CalculateUtility();
+            var newUtility = modifierData.Duration / modifierData.Value;
 
-        public abstract float GetModifierValue();
+            return newUtility >= utility;
+        }
         
-        protected abstract void OnApply(PlantModel plant);
-        protected abstract void OnRemove(PlantModel plant);
+        public float CalculateUtility()
+        {
+            var timeFactor = (float)(RemainingTime.TotalSeconds / _duration);
+            
+            return Value * timeFactor;
+        }
     }
 }

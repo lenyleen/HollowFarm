@@ -1,9 +1,12 @@
-﻿namespace DefaultNamespace.Boosters.Interfaces
+﻿using System.Collections.Generic;
+using DefaultNamespace.Boosters.ScriptableObjects;
+
+namespace DefaultNamespace.Boosters.Interfaces
 {
     public interface IPlantModifierApplicable
     {
-        public void ApplyModifier(IPlantModifier modifier);
-        public void RemoveModifier(IPlantModifier modifier);
-        public void UpdateModifiers(float deltaTime);
+       public bool TryGetPlantModifier(PlantProperty plantProperty, out IPlantModifier plantModifier); 
+       public void ApplyModifier(PlantProperty plantProperty, IPlantModifier modifier);
+       public void UpdateModifiers(float deltaTime);
     }
 }
