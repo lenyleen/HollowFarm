@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using DefaultNamespace.Boosters.Interfaces;
+using DefaultNamespace.Boosters.ScriptableObjects;
 using DefaultNamespace.Models;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.Signals;
+using DefaultNamespace.Statics;
 using DefaultNamespace.ViewModels.Interfaces;
 using DefaultNamespace.Views;
 using DefaultNamespace.Views.UIVIiews;
@@ -21,6 +25,7 @@ namespace DefaultNamespace.ViewModels
         private PlantStatus _currentMainStatus = PlantStatus.None;
         public ReactiveProperty<Sprite> GrowthStage { get;}
         public ReactiveCollection<PlantStatus> StatusIcons { get; } = new (new HashSet<PlantStatus>());
+        public ReactiveProperty<Color> BuffColor { get; } = new ReactiveProperty<Color>();
         public ReactiveProperty<bool> IsHovered { get; } = new(false);
         public PlantViewModel(PlantModel model, SignalBus signalBus)
         {
@@ -42,17 +47,10 @@ namespace DefaultNamespace.ViewModels
                     HandleDead(_model.Data.DiedSpritesByPhase, _model.Data.SpritesByPhase);
                 
             }).AddTo(_disposable);
-            _model.Boosters.ObserveAdd().Subscribe(_ =>
-            {
-                StatusIcons.Add(PlantStatus.Boosted);
-            }).AddTo(_disposable);
             
-            _model.Boosters.ObserveRemove().Subscribe(_ =>
-            {
-                if (_model.Boosters.Count == 0)
-                    StatusIcons.Remove(PlantStatus.Boosted);
-            }).AddTo(_disposable);
-            
+             _model.Modifiers.ObserveAdd().Subscribe(OnModifierAdded).AddTo(_disposable);
+             _model.Modifiers.ObserveRemove().Subscribe(OnModifierRemoved).AddTo(_disposable);
+             
             UpdateMainIcon(PlantStatus.Growing);
         }
         
@@ -100,6 +98,16 @@ namespace DefaultNamespace.ViewModels
         public void Hover(Vector3 position, int direction = 1)
         {
             IsHovered.Value = direction > 0;
+        }
+
+        private void OnModifierAdded(CollectionAddEvent<Dictionary<PlantProperty, IPlantModifier>> addEvent)
+        {
+            BuffColor.Value = BuffColorBlender.MixModifierColors(addEvent.Value.Values.ToList());
+        }
+        
+        private void OnModifierRemoved(CollectionRemoveEvent<Dictionary<PlantProperty, IPlantModifier>> removeEvent)
+        {
+            BuffColor.Value = BuffColorBlender.MixModifierColors(removeEvent.Value.Values.ToList());
         }
         
         

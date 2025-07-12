@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using DefaultNamespace.Boosters.Factory;
+using DefaultNamespace.Boosters.Interfaces;
+using DefaultNamespace.Boosters.ScriptableObjects;
+using DefaultNamespace.Boosters.Service;
 using DefaultNamespace.DataObjects;
 using DefaultNamespace.Models;
 using DefaultNamespace.Models.Interfaces;
@@ -20,10 +24,12 @@ namespace DefaultNamespace.ViewModels
         private readonly SoilViewModel.Factory _soilFactory;
         private readonly FieldModel _fieldModel;
         private readonly SignalBus _signalBus;
+        private readonly IFactory<PlantModifierData, IPlantModifier> _plantModifierFactory;
         
         private Dictionary<Vector3Int, SoilViewModel> _soilVms = new Dictionary<Vector3Int, SoilViewModel>();
 
-        public FieldViewModel(SoilViewModel.Factory soilFactory, FieldModel fieldModel, SignalBus signalBus)
+        public FieldViewModel(SoilViewModel.Factory soilFactory, FieldModel fieldModel, PlantModifierFactory modifierFactory, 
+            SignalBus signalBus)
         {
             _soilFactory = soilFactory;
             _fieldModel = fieldModel;
@@ -36,7 +42,8 @@ namespace DefaultNamespace.ViewModels
             _signalBus.Subscribe<ItemUsedSignal<PlantData>>(PlantPlant);
             foreach (var soilModel in soilModels)
             {
-                var vm = _soilFactory.Create(soilModel);
+                var modifierService = new PlantModifierService(_plantModifierFactory, soilModel);
+                var vm = _soilFactory.Create(soilModel,modifierService);
                 _soilVms.Add(soilModel.TilePosition, vm);
             }
         }

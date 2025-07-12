@@ -1,4 +1,5 @@
-﻿using DefaultNamespace.Boosters.Factory;
+﻿using System;
+using DefaultNamespace.Boosters.Factory;
 using DefaultNamespace.Boosters.Signals;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.ViewModels;
@@ -6,7 +7,7 @@ using Zenject;
 
 namespace DefaultNamespace.Boosters.Handlers
 {
-    public class BoosterApplicationHandler
+    public class BoosterApplicationHandler : IInitializable, IDisposable
     {
         private readonly SignalBus _signalBus;
         public BoosterApplicationHandler(SignalBus signalBus)

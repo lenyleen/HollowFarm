@@ -4,18 +4,19 @@ using DefaultNamespace.Boosters.Factory;
 using DefaultNamespace.Boosters.Interfaces;
 using DefaultNamespace.Boosters.ScriptableObjects;
 using DefaultNamespace.ScriptableObjects;
-using Unity.VisualScripting;
+using Zenject;
+using IInitializable = Unity.VisualScripting.IInitializable;
 
 namespace DefaultNamespace.Boosters.Service
 {
     public class PlantModifierService : IPlantModifierService, IInitializable, IDisposable
     {
-        private readonly PlantModifierFactory _factory;
+        private readonly IFactory<PlantModifierData, IPlantModifier> _factory;
         private readonly IModifierTargetHolder _targetHolder;
         
         private IPlantModifierApplicable _applicable;
 
-        public PlantModifierService(PlantModifierFactory factory, IModifierTargetHolder targetHolder)
+        public PlantModifierService(IFactory<PlantModifierData, IPlantModifier> factory, IModifierTargetHolder targetHolder)
         {
             _factory = factory;
             _targetHolder = targetHolder;

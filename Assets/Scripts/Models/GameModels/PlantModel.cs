@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using DefaultNamespace.Boosters.Interfaces;
+using DefaultNamespace.Boosters.ScriptableObjects;
 using DefaultNamespace.Handlers;
 using DefaultNamespace.Models.Interfaces;
 using DefaultNamespace.ScriptableObjects;
@@ -12,7 +14,7 @@ using Zenject;
 
 namespace DefaultNamespace.Models
 {
-    public class PlantModel :IMoonPhaseDependent, IPlantStateContext, IDisposable
+    public class PlantModel :IMoonPhaseDependent, IPlantStateContext, IDisposable, IPlantModifierApplicable
     {
         public PlantData Data { get; }
         public DateTime PlantedAt { get; private set; }
@@ -22,7 +24,8 @@ namespace DefaultNamespace.Models
         public TimeSpan TimeWithoutWater { get; private set; }
         public ReactiveProperty<TimeSpan> CurrentGrowthTime { get;}
         public ReactiveProperty<PlantStatus> CurrentStatus { get;}
-        public ReactiveCollection<ConsumableData> Boosters { get; }
+
+        public ReactiveCollection<Dictionary<PlantProperty, IPlantModifier>> Modifiers { get;} =  new ();
 
         private MoonPhase _currentMoonPhase;
 
@@ -38,7 +41,6 @@ namespace DefaultNamespace.Models
             CurrentGrowthTime = new ReactiveProperty<TimeSpan>(TimeSpan.FromMinutes(Data.growthDurationInMinutes));
             TimeWithoutWater = TimeSpan.FromMinutes(0.5);
             DryedAt =  DateTime.UtcNow + TimeSpan.FromMinutes(0.5);
-            Boosters = new ReactiveCollection<ConsumableData>(new HashSet<ConsumableData>());
             GrowthDuration = TimeSpan.FromMinutes(Data.growthDurationInMinutes);
         }
 
@@ -65,6 +67,21 @@ namespace DefaultNamespace.Models
             
             harvestedSignal = new PlantHarvestedSignal(Data, _amount);
             return true;
+        }
+
+        public bool TryGetPlantModifier(PlantProperty plantProperty, out IPlantModifier plantModifier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ApplyModifier(PlantProperty plantProperty, IPlantModifier modifier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateModifiers(float deltaTime)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -80,6 +80,6 @@ namespace DefaultNamespace.ViewModels
             _plantViewModel = null;
             _model.RemovePlant(); ;
         }
-        public class Factory : PlaceholderFactory<Soil,SoilViewModel> { }
+        public class Factory : PlaceholderFactory<Soil,IPlantModifierService,SoilViewModel> { }
     }
 }

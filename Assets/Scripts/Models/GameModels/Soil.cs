@@ -1,4 +1,5 @@
 ﻿using System;
+using DefaultNamespace.Boosters.Interfaces;
 using DefaultNamespace.Models.Interfaces;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.ViewModels;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace DefaultNamespace.Models
 {
-    public class Soil : IPlantSoilConext
+    public class Soil : IPlantSoilConext, IModifierTargetHolder
     {
         public bool IsOccupied => _plant != null;
         private readonly SoilData _soilData; 
@@ -19,6 +20,8 @@ namespace DefaultNamespace.Models
         private PlantModel _plant;
         private TimeSpan _wateredTime;
         private TimeSpan _fertilizedTime;
+        
+        public event Action<IPlantModifierApplicable> OnModifierApplied;
         
 
         public Soil(SoilData soilData,Vector3Int tilePosition, Vector3 worldPosition)
@@ -69,12 +72,14 @@ namespace DefaultNamespace.Models
         {
             _plant.Dispose();
             _plant = null;
+            OnModifierApplied?.Invoke(null);
         }
 
         public void SetPlantModel(PlantModel plantModel)
         {
             _plant = plantModel;
             IsWatered = true;
+            OnModifierApplied?.Invoke(_plant);
         }
         
         public void Clear()
@@ -84,5 +89,7 @@ namespace DefaultNamespace.Models
             _wateredTime = TimeSpan.Zero;
             _fertilizedTime = TimeSpan.Zero;
         }
+
+        
     }
 }

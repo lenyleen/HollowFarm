@@ -12,6 +12,7 @@ using Service;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Views.GameViews.OutlineManager;
 using Zenject;
 
 namespace DefaultNamespace.Factory
@@ -24,15 +25,18 @@ namespace DefaultNamespace.Factory
         private readonly SignalBus _signalBus;
         private readonly PlantView.Pool _pool;
         private readonly Dictionary<PlantViewModel, PlantView> _views;
+        private readonly IOutlineManager _outlineManager;
+        
 
         public PlantSpawnService(DiContainer container,PlantView.Pool pool,  SignalBus signalBus, Image prefab, 
-            PlantStatusIconData plantStatusIconData)
+            PlantStatusIconData plantStatusIconData, IOutlineManager outlineManager)
         {
             _container = container;
             _signalBus = signalBus;
             _iconPrefab = prefab;
             _pool = pool;
             _plantStatusIconData = plantStatusIconData;
+            _outlineManager = outlineManager;
             _views = new  Dictionary<PlantViewModel, PlantView>();
         }
 
@@ -55,8 +59,14 @@ namespace DefaultNamespace.Factory
                 images.Add(statusIcon.Key, image);
             }
 
-            var plantView = _pool.Spawn(plantViewModel, new Vector3(position.x, position.y + 2.3f, 0),
-                model.Data.LightColor, model.Data.SpritesByPhase[0], images);
+            var spriteHeight = plantData.SpritesByPhase[0].bounds.size.y;
+            var worldPosition = new Vector3(position.x, position.y + 2.3f, 0);
+            var sortingOrder = (int)-worldPosition.y;
+            
+            var plantView = _pool.Spawn(plantViewModel, worldPosition,
+                model.Data.LightColor, model.Data.SpritesByPhase[0], _outlineManager);
+            
+            plantView.IconView.Initialize(images, spriteHeight, sortingOrder);
             
             _views.Add(plantViewModel, plantView);
             

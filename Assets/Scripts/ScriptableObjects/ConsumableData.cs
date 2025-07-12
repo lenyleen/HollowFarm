@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DefaultNamespace.Boosters.ScriptableObjects;
+using TMPro;
 using UnityEngine;
 
 namespace DefaultNamespace.ScriptableObjects

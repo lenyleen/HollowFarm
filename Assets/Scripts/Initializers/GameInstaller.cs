@@ -1,4 +1,7 @@
 ﻿using System;
+using DefaultNamespace.Boosters.Factory;
+using DefaultNamespace.Boosters.Handlers;
+using DefaultNamespace.Boosters.Interfaces;
 using DefaultNamespace.Factory;
 using DefaultNamespace.Handlers;
 using DefaultNamespace.Handlers.ClickHandler;
@@ -13,6 +16,7 @@ using Service;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using Views.GameViews.OutlineManager;
 using Zenject;
 
 namespace DefaultNamespace.Initializers
@@ -57,14 +61,21 @@ namespace DefaultNamespace.Initializers
             Container.BindInterfacesAndSelfTo<FieldViewModel>()
                 .AsSingle();
             
-            Container.BindFactory<Soil, SoilViewModel, SoilViewModel.Factory>()
+            Container.BindFactory<Soil, IPlantModifierService, SoilViewModel, SoilViewModel.Factory>()
                 .AsSingle();
 
             Container.BindInterfacesAndSelfTo<TimeHandler>()
                 .AsSingle();
             
+            InitializeConsumables();
             InitializeInput();
             InitializePlant();
+        }
+
+        private void InitializeConsumables()
+        {
+            Container.BindInterfacesAndSelfTo<PlantModifierFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BoosterApplicationHandler>().AsSingle();
         }
 
         private void InitializePlant()
@@ -76,6 +87,8 @@ namespace DefaultNamespace.Initializers
                 .AsSingle()
                 .WithArguments( _gameInstallerData.PlantStatusIconData,
                     _gameInstallerData.PlantIconPrefab);
+
+            Container.BindInterfacesAndSelfTo<OutlineManager>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<PlantStateFactory>().AsSingle();
             
