@@ -13,6 +13,7 @@ namespace Views.GameViews.OutlineManager
 
         public void RegisterRenderer(Renderer renderer)
         {
+            Debug.Log(Shader.PropertyToID("_OutlineColor"));
             if (_propertyBlocks.ContainsKey(renderer)) return;
             
             var block = new MaterialPropertyBlock();
@@ -23,12 +24,23 @@ namespace Views.GameViews.OutlineManager
         {
             if (!_propertyBlocks.ContainsKey(renderer))
                 RegisterRenderer(renderer);
-            
-            var block = _propertyBlocks[renderer];
-            block.SetColor(OutlineColorID, color);
-            
 
-            renderer.SetPropertyBlock(block);
+            var block = _propertyBlocks[renderer];
+
+            // Для SpriteRenderer — всегда актуальный спрайт!
+            if (renderer is SpriteRenderer spriteRenderer && spriteRenderer.sprite != null)
+            {
+                renderer.material.SetTexture("_MainTex", spriteRenderer.sprite.texture);
+                
+                renderer.material.SetColor("_OutlineColor", color);
+                renderer.material.SetTexture("_MainTex", spriteRenderer.sprite.texture);
+            }
+            /*else if (renderer.sharedMaterial.HasProperty("_MainTex"))
+                block.SetTexture("_MainTex", renderer.sharedMaterial.GetTexture("_MainTex"));*/
+
+            /*block.SetColor(OutlineColorID, color);
+
+            renderer.SetPropertyBlock(block);*/
         }
 
         public void UnregisterRenderer(Renderer renderer)

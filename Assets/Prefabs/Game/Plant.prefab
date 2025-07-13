@@ -174,7 +174,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: fdce251d2bd7bfa4ab691d2d23d57edc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0500c42ba5a74e3d827f594982c64501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _iconView: {fileID: 3335746627982099272}
+  <IconView>k__BackingField: {fileID: 3335746627982099272}
 --- !u!1 &5607605532711216414
 GameObject:
   m_ObjectHideFlags: 0

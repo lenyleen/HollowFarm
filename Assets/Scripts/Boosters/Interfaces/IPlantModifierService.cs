@@ -1,8 +1,10 @@
-﻿using DefaultNamespace.ScriptableObjects;
+﻿using System;
+using DefaultNamespace.ScriptableObjects;
+using Zenject;
 
 namespace DefaultNamespace.Boosters.Interfaces
 {
-    public interface IPlantModifierService
+    public interface IPlantModifierService :  IInitializable, IDisposable
     {
         void ApplyModifiers(ConsumableData boosterData);
         void UpdateModifiers();

@@ -9,7 +9,7 @@ using IInitializable = Unity.VisualScripting.IInitializable;
 
 namespace DefaultNamespace.Boosters.Service
 {
-    public class PlantModifierService : IPlantModifierService, IInitializable, IDisposable
+    public class PlantModifierService : IPlantModifierService 
     {
         private readonly IFactory<PlantModifierData, IPlantModifier> _factory;
         private readonly IModifierTargetHolder _targetHolder;

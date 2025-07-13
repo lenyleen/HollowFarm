@@ -15,10 +15,9 @@ using Zenject;
 
 namespace DefaultNamespace.ViewModels
 {
-    public class SoilViewModel : IInitializable, IDisposable, ICommandPerformer
+    public class SoilViewModel : IDisposable, ICommandPerformer
     {
         private readonly Soil _model;
-        private readonly SignalBus _signalBus;
         private readonly HoverVisualizerService _hoverVisualizer;
         private readonly IPlantSpawnService _plantSpawnService;
         private readonly IPlantModifierService _plantModifierService;
@@ -28,20 +27,15 @@ namespace DefaultNamespace.ViewModels
         public IPlantModifierService BoosterService => _plantModifierService;
 
         public SoilViewModel(Soil soil, HoverVisualizerService hoverVisualizer, IPlantSpawnService plantSpawnService,
-            SignalBus signalBus, IPlantModifierService plantModifierService)
+             IPlantModifierService plantModifierService)
         {
             _model = soil;
             _hoverVisualizer = hoverVisualizer;
             _plantSpawnService = plantSpawnService;
-            _signalBus = signalBus;
             _plantModifierService = plantModifierService;
+            BoosterService.Initialize();
         }
-
-        public void Initialize()
-        {
-            
-        }
-
+        
         public void Hover(int direction)
         {
             _hoverVisualizer.Hover(_model.TilePosition,direction);
@@ -56,7 +50,7 @@ namespace DefaultNamespace.ViewModels
         
         public void Dispose()
         {
-            // TODO release managed resources here
+            BoosterService.Dispose();
         }
         
         public void AddWater() => _model.Water();

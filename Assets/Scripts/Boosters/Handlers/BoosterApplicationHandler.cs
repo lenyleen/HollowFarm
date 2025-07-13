@@ -7,7 +7,7 @@ using Zenject;
 
 namespace DefaultNamespace.Boosters.Handlers
 {
-    public class BoosterApplicationHandler : IInitializable, IDisposable
+    public class BoosterApplicationHandler
     {
         private readonly SignalBus _signalBus;
         public BoosterApplicationHandler(SignalBus signalBus)
@@ -15,10 +15,7 @@ namespace DefaultNamespace.Boosters.Handlers
             _signalBus = signalBus;
         }
 
-        public void Initialize()
-        {
-            _signalBus.Subscribe<ApplyBoosterSignal>(Handle);
-        }
+        
 
         private void Handle(ApplyBoosterSignal signal)
         {
@@ -31,10 +28,7 @@ namespace DefaultNamespace.Boosters.Handlers
             boosterService.ApplyModifiers(boosterData);
         }
         
-        public void Dispose()
-        {
-            _signalBus.Unsubscribe<ApplyBoosterSignal>(Handle);
-        }
+       
 
     }
 }

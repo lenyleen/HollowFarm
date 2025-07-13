@@ -45,13 +45,13 @@ namespace DefaultNamespace.Views
             viewModel.StatusIcons.ObserveRemove().Subscribe(status => 
                     IconView.HideIcon(status.Value))
                 .AddTo(_disposable);
-
-            viewModel.BuffColor.Subscribe(ChangeOutline)
-                .AddTo(_disposable);
             
             _outlineManager =  outlineManager;
             _outlineManager.RegisterRenderer(_spriteRenderer);
             _outlineManager.SetObjectOutline(_spriteRenderer,Color.clear);
+            
+            viewModel.BuffColor.Subscribe(ChangeOutline)
+                .AddTo(_disposable);
         }
 
         private void ChangeSprite(Sprite sprite)
@@ -83,7 +83,7 @@ namespace DefaultNamespace.Views
         
         private void OnDestroy()
         {
-            _outlineManager.UnregisterRenderer(_spriteRenderer);
+            _outlineManager?.UnregisterRenderer(_spriteRenderer);
             if(_disposable == null) return;
             _disposable.Dispose();
         }

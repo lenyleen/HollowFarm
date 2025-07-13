@@ -13,7 +13,7 @@ namespace DefaultNamespace.Boosters
         private readonly float _duration;
         private readonly Color _color;
         private readonly float _value;
-        private readonly int _rating;
+        
         private bool _isActive;
         private TimeSpan _remainingTime;
         
@@ -21,7 +21,7 @@ namespace DefaultNamespace.Boosters
         public bool IsActive => _isActive;
         public Color Color => _color;
         public float Value => _value;
-        public int Rating => _rating;
+        
         public TimeSpan RemainingTime => _remainingTime;
 
         public PlantModifier(PlantModifierData data)

@@ -16,17 +16,17 @@ MonoBehaviour:
   - icon: {fileID: -2864707325410528273, guid: 04e26c95a02476944ad766bbcba3eef1, type: 3}
     name: "\u0421\u0438\u0436"
     description: "\u0444\u044B\u0432\u0444\u044B\u0432\u0444\u044B\u0432"
-    quantity: 3
+    quantity: 100
     data: {fileID: 11400000, guid: e8138c3b873469f489cd144baec736ff, type: 2}
   - icon: {fileID: -8485995304713028149, guid: aaab7f244c7d92645b2f43f176841a31, type: 3}
     name: Potion
     description: Potion
-    quantity: 6
+    quantity: 100
     data: {fileID: 11400000, guid: a87146f2f6d77a24fa0610073e4195cf, type: 2}
   - icon: {fileID: 245897740014874009, guid: 04e26c95a02476944ad766bbcba3eef1, type: 3}
     name: Ghostshroom
     description: 
-    quantity: 97
+    quantity: 88
     data: {fileID: 11400000, guid: 97e2c3b0ab1e0c34c9afbc39d7d887da, type: 2}
   - icon: {fileID: 0}
     name: 

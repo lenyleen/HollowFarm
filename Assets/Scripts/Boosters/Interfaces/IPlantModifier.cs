@@ -9,7 +9,6 @@ namespace DefaultNamespace.Boosters.Interfaces
         public string Name { get; }
         public bool IsActive { get; }
         public Color Color { get; }
-        public int Rating { get; }
         public float Value { get; }
         public TimeSpan RemainingTime { get; }
 

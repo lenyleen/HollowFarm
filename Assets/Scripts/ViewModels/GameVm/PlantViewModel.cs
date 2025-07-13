@@ -47,9 +47,10 @@ namespace DefaultNamespace.ViewModels
                     HandleDead(_model.Data.DiedSpritesByPhase, _model.Data.SpritesByPhase);
                 
             }).AddTo(_disposable);
-            
-             _model.Modifiers.ObserveAdd().Subscribe(OnModifierAdded).AddTo(_disposable);
-             _model.Modifiers.ObserveRemove().Subscribe(OnModifierRemoved).AddTo(_disposable);
+
+            _model.Modifiers.ObserveCountChanged()
+                .Subscribe(BuffsChanged)
+                .AddTo(_disposable);
              
             UpdateMainIcon(PlantStatus.Growing);
         }
@@ -100,14 +101,10 @@ namespace DefaultNamespace.ViewModels
             IsHovered.Value = direction > 0;
         }
 
-        private void OnModifierAdded(CollectionAddEvent<Dictionary<PlantProperty, IPlantModifier>> addEvent)
+        private void BuffsChanged(int count)
         {
-            BuffColor.Value = BuffColorBlender.MixModifierColors(addEvent.Value.Values.ToList());
-        }
-        
-        private void OnModifierRemoved(CollectionRemoveEvent<Dictionary<PlantProperty, IPlantModifier>> removeEvent)
-        {
-            BuffColor.Value = BuffColorBlender.MixModifierColors(removeEvent.Value.Values.ToList());
+            var buffs = _model.Modifiers.Values.ToList();
+            BuffColor.Value = BuffColorBlender.MixModifierColors(buffs);
         }
         
         

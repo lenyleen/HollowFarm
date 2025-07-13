@@ -15,5 +15,5 @@ MonoBehaviour:
   _name: SpeedModifier
   _valueType: 0
   value: 1.2
-  _color: {r: 0.7830189, g: 0.44467014, b: 0.025854412, a: 0}
+  _color: {r: 0.7830189, g: 0.44467014, b: 0.025854412, a: 1}
   _plantProperty: 0

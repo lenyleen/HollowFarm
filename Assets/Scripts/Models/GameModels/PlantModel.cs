@@ -24,8 +24,7 @@ namespace DefaultNamespace.Models
         public TimeSpan TimeWithoutWater { get; private set; }
         public ReactiveProperty<TimeSpan> CurrentGrowthTime { get;}
         public ReactiveProperty<PlantStatus> CurrentStatus { get;}
-
-        public ReactiveCollection<Dictionary<PlantProperty, IPlantModifier>> Modifiers { get;} =  new ();
+        public ReactiveDictionary<PlantProperty, IPlantModifier> Modifiers { get;} =  new ();
 
         private MoonPhase _currentMoonPhase;
 
@@ -71,17 +70,20 @@ namespace DefaultNamespace.Models
 
         public bool TryGetPlantModifier(PlantProperty plantProperty, out IPlantModifier plantModifier)
         {
-            throw new NotImplementedException();
+            return Modifiers.TryGetValue(plantProperty, out plantModifier);
         }
 
         public void ApplyModifier(PlantProperty plantProperty, IPlantModifier modifier)
         {
-            throw new NotImplementedException();
+            Modifiers.TryAdd(plantProperty, modifier);
         }
 
         public void UpdateModifiers(float deltaTime)
         {
-            throw new NotImplementedException();
+            foreach (var modifier in Modifiers.Values)
+            {
+                modifier.Update(deltaTime);
+            }
         }
     }
 }

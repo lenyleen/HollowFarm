@@ -28,18 +28,21 @@ namespace DefaultNamespace.ViewModels
         
         private Dictionary<Vector3Int, SoilViewModel> _soilVms = new Dictionary<Vector3Int, SoilViewModel>();
 
-        public FieldViewModel(SoilViewModel.Factory soilFactory, FieldModel fieldModel, PlantModifierFactory modifierFactory, 
+        public FieldViewModel(SoilViewModel.Factory soilFactory, FieldModel fieldModel, 
+            IFactory<PlantModifierData, IPlantModifier> modifierFactory, 
             SignalBus signalBus)
         {
             _soilFactory = soilFactory;
             _fieldModel = fieldModel;
             _signalBus = signalBus;
+            _plantModifierFactory = modifierFactory;
         }
 
         public void Initialize()
         {
             var soilModels = _fieldModel.All;
             _signalBus.Subscribe<ItemUsedSignal<PlantData>>(PlantPlant);
+            _signalBus.Subscribe<ItemUsedSignal<ConsumableData>>(ConsumableSelected);
             foreach (var soilModel in soilModels)
             {
                 var modifierService = new PlantModifierService(_plantModifierFactory, soilModel);
@@ -67,7 +70,15 @@ namespace DefaultNamespace.ViewModels
 
         public void ConsumableSelected(ItemUsedSignal<ConsumableData> s)
         {
-            
+            foreach (var position in s.Positions)
+            {
+                var soilVm = GetVmAt(position);
+                if (!s.Seed.TryGetData<ConsumableData>(out var data))
+                    return;
+                soilVm.BoosterService.ApplyModifiers(data);
+            }
+
+            _signalBus.Fire<ClosePopUpRequestSignal>();
         }
         
         public void Dispose()
