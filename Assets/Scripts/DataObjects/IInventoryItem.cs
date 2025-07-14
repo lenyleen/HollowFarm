@@ -19,7 +19,16 @@ namespace DefaultNamespace.DataObjects
         public string Description => description;
         public int Quantity => quantity;
         public ICanBeDrawnInInventory Data => data as ICanBeDrawnInInventory;
-        
+
+        public InventoryItem(Sprite icon, string name, string description, int quantity, ScriptableObject data)
+        {
+            this.icon = icon;
+            this.name = name;
+            this.description = description;
+            this.quantity = quantity;
+            this.data = data;
+        }
+
         public bool TryGetData<T>(out T data) where T : ICanBeDrawnInInventory
         {
             data = default(T);

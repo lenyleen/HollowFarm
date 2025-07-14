@@ -28,8 +28,6 @@ namespace DefaultNamespace.Models
 
         private MoonPhase _currentMoonPhase;
 
-        private int _amount;
-
 
         public PlantModel(PlantData plantData)
         {
@@ -57,14 +55,19 @@ namespace DefaultNamespace.Models
             CurrentStatus.Value = PlantStatus.Harvested;
         }
         
-        public bool TryHarvest(out PlantHarvestedSignal  harvestedSignal)
+        public bool TryHarvest(out ItemAddSignal<PlantData>  harvestedSignal)
         {
             harvestedSignal = null;
             
             if (CurrentStatus.Value != PlantStatus.CanBeHarvested)
                 return false;
+
+            var finalAmount = Data.Amount;
             
-            harvestedSignal = new PlantHarvestedSignal(Data, _amount);
+            if (TryGetPlantModifier(PlantProperty.HarvestMultiplier, out var modifier))
+                finalAmount = (int)(Data.Amount * modifier.Value);
+            
+            harvestedSignal = new ItemAddSignal<PlantData>(Data, finalAmount);
             return true;
         }
 

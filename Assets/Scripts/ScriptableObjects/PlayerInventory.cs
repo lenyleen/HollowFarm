@@ -20,15 +20,20 @@ namespace DefaultNamespace.ScriptableObjects
             }
             return _items.Where(item => item.Data is T).ToList();
         }
+
+        public List<InventoryItem> GetAllItems => _items ?? new List<InventoryItem>();
         
-        public void RemoveItem(InventoryItem item, int amount)
+        public void RemoveItem(InventoryItem item)
         {
+            if(!_items.Any())
+                return;
             
+            if(!_items.Contains(item))
+                return;
+            
+            _items.Remove(item);
         }
 
-        public void AddItem(InventoryItem item, int amount)
-        {
-            
-        }
+        public void AddItem(InventoryItem item) =>_items.Add(item);
     }
 }

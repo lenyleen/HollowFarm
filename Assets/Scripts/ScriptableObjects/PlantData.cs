@@ -12,7 +12,14 @@ namespace DefaultNamespace.ScriptableObjects
     [System.Serializable]
     public class PlantData : ScriptableObject, ICanBeDrawnInInventory
     {
+        public string Name => name.ToString();
+        public string Description => _desctiption;
+        public Sprite Icon => _inventoryIcon;
+
+        
+        [Header("Параметры")]
         public Plants name;
+        public string _desctiption;
         public GrowthStates startGrowthState;
         public float growthDurationInMinutes;
         public DateTime belongsToMoonPhase;
@@ -20,6 +27,12 @@ namespace DefaultNamespace.ScriptableObjects
         public float byWaterGrowthMultiplier;
         public List<Sprite> SpritesByPhase;
         public List<Sprite> DiedSpritesByPhase;
+        public Sprite _inventoryIcon;
         public Color LightColor;
+        public int Amount;
     }
 }
+
+//name
+//Desctiption
+//Icon

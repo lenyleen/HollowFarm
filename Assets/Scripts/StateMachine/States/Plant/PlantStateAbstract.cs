@@ -1,4 +1,6 @@
 ﻿using System;
+using DefaultNamespace.Boosters.Interfaces;
+using DefaultNamespace.Boosters.ScriptableObjects;
 using DefaultNamespace.Models;
 using DefaultNamespace.ScriptableObjects;
 using Handlers.ClickHandler;
@@ -23,7 +25,12 @@ namespace StateMachine.States.Plant
 
         protected void Grow()
         {
-            _plantStateContext.CurrentGrowthTime.Value -= TimeSpan.FromSeconds(1); //++++ бустеры
+            var deltaTime = TimeSpan.FromSeconds(1);
+            if (_plantStateContext.TryGetPlantModifier(PlantProperty.GrowthSpeed, out var modifier))
+            {
+                deltaTime *= modifier.Value;
+            }
+            _plantStateContext.CurrentGrowthTime.Value -= deltaTime; //++++ бустеры
             Debug.Log($"{_plantStateContext.CurrentGrowthTime}");
             if(_plantStateContext.CurrentGrowthTime.Value <=  TimeSpan.Zero)
                 _plantStateContext.CurrentStatus.Value = PlantStatus.CanBeHarvested;

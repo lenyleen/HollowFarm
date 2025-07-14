@@ -12,5 +12,6 @@ namespace DefaultNamespace.Signals
         public InventoryItem Seed;
         public List<Vector3Int> Positions;
 
+        public int GetItemAmount() => Positions.Count;
     }
 }

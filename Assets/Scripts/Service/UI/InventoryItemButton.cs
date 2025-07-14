@@ -22,16 +22,14 @@ namespace Service.UI
         public void Initialize<T>(T plantData, Sprite imageSprite, int quantity,UnityAction onClick) where T :ICanBeDrawnInInventory
         {
             Data = plantData;
-            _quantity = quantity; 
-            
             image.sprite = imageSprite;
-            quantityText.text = quantity.ToString();
+            UpdateQuantity(quantity);
             button.onClick.AddListener(onClick);
         }
 
         public void UpdateQuantity(int quantity)
         {
-            _quantity += quantity;
+            _quantity = quantity;
             if (_quantity <= 0)
             {
                 Destroy(this.gameObject);

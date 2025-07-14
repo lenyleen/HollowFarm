@@ -5,23 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8f93f9e-d206-4de7-a098-ddcfaf2dfff3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem/Interfaces.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem/Interfaces/IInventoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem/Interfaces/IInventoryService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem/InventoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventorySystem/InventoryService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HollowFram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/PlayerInventory.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/PlayerInventory.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/Plant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/Plant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boosters/Handlers/BoosterApplicationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Handlers/BoosterApplicationHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifierService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Interfaces/IPlantModifierService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boosters/Service/PlantModifierService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters/Service/PlantModifierService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataObjects/IInventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataObjects/IInventoryItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Initializers/FarmInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Initializers/FarmInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/IPlantStateContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/IPlantStateContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/PlantModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameModels/PlantModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Statics/BuffColorBlender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Statics/BuffColorBlender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/FieldViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/FieldViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/PlantViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/PlantViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/SoilViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/GameVm/SoilViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/OutlineManager/OutlineManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/OutlineManager/OutlineManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/PlantView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/PlantView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/OutlineShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/OutlineShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/outline.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/UiModels/InventoyItemMenuModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/UiModels/InventoyItemMenuModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ConsumableData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ConsumableData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ICanBeDrawnInInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ICanBeDrawnInInventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/PlantData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/PlantData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/PlayerInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/PlayerInventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Signals/PlantHarvestedSignal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/ItemAddSignal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Signals/PlantHarvestedSignal.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/ItemAddSignal.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Signals/PlantSeedSignal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/ItemUsedSignal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Signals/PlantSeedSignal.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/ItemUsedSignal.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/CanBeHarwested.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/CanBeHarwested.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/PlantStateAbstract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachine/States/Plant/PlantStateAbstract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/InventoryItemsMenuVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/InventoryItemsMenuVm.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,10 +132,10 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11624">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6404">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11624" />
+      <option name="pid" value="6404" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -175,7 +181,8 @@
       <workItem from="1752079362791" duration="70000" />
       <workItem from="1752135684395" duration="8357000" />
       <workItem from="1752315517838" duration="819000" />
-      <workItem from="1752393305983" duration="8525000" />
+      <workItem from="1752393305983" duration="9436000" />
+      <workItem from="1752484470652" duration="8969000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial project files and version 0.1.0">
       <option name="closed" value="true" />
@@ -241,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752318623704</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactored Buff related code">
+      <option name="closed" value="true" />
+      <created>1752403760510</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752403760510</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +327,8 @@
     <MESSAGE value="Fixed potion liquid shader, add materials for potions" />
     <MESSAGE value="Start of development booster system" />
     <MESSAGE value="Add outline buff shader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add outline buff shader" />
+    <MESSAGE value="Refactored Buff related code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Buff related code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -337,30 +353,56 @@
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Statics/BuffColorBlender.cs</url>
-          <line>19</line>
-          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\Statics\BuffColorBlender.cs" containingFunctionPresentation="Method 'MixModifierColors'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Views/UIVIiews/InventoryItemSelectionMenu.cs</url>
+          <line>50</line>
+          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\Views\UIVIiews\InventoryItemSelectionMenu.cs" containingFunctionPresentation="Method 'ShowButton'">
             <startOffsets>
-              <option value="539" />
+              <option value="1420" />
             </startOffsets>
             <endOffsets>
-              <option value="613" />
+              <option value="1477" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Statics/BuffColorBlender.cs</url>
-          <line>21</line>
-          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\Statics\BuffColorBlender.cs" containingFunctionPresentation="Method 'MixModifierColors'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Factory/InventoryItemButtonFactory.cs</url>
+          <line>24</line>
+          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\Factory\InventoryItemButtonFactory.cs" containingFunctionPresentation="Method 'Create'">
             <startOffsets>
-              <option value="639" />
+              <option value="857" />
             </startOffsets>
             <endOffsets>
-              <option value="680" />
+              <option value="900" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="53" />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/DataObjects/IInventoryItem.cs</url>
+          <line>33</line>
+          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\DataObjects\IInventoryItem.cs" containingFunctionPresentation="Method 'TryGetData'">
+            <startOffsets>
+              <option value="1142" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1160" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/ViewModels/UiVm/InventoryItemsMenuVm.cs</url>
+          <line>63</line>
+          <properties documentPath="F:\UnityProjects\HollowFram\Assets\Scripts\ViewModels\UiVm\InventoryItemsMenuVm.cs" containingFunctionPresentation="Method 'UpdateItemsButtons'">
+            <startOffsets>
+              <option value="2321" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2338" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
           <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />

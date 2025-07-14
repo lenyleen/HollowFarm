@@ -1,4 +1,6 @@
 ﻿using System;
+using DefaultNamespace.Boosters.Interfaces;
+using DefaultNamespace.Boosters.ScriptableObjects;
 using DefaultNamespace.Models;
 using Handlers.ClickHandler;
 using Service;

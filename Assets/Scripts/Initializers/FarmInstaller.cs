@@ -2,6 +2,7 @@
 using UnityEngine;
 using Zenject;
 using DefaultNamespace.Handlers;
+using DefaultNamespace.InventorySystem;
 using DefaultNamespace.ScriptableObjects;
 using DefaultNamespace.Signals;
 using DefaultNamespace.View;
@@ -23,7 +24,7 @@ namespace DefaultNamespace.Initializers
         {
             SignalBusInstaller.Install(Container);
             InstallSignals();
-            Container.Bind<PlayerInventory>().FromInstance(_playerInventory).AsSingle();
+            InitializePlayerInventory();
             DG.Tweening.DOTween.Init();
             UiInstaller.Install(Container, _uiData);
             GameInstaller.Install(Container,_gameInstallerData);
@@ -39,7 +40,13 @@ namespace DefaultNamespace.Initializers
             Container.DeclareSignal<SpawnTimeRequestSignal>();
             Container.DeclareSignal<SoilMenuClosed>();
             Container.DeclareSignal<ClosePopUpRequestSignal>();
-            Container.DeclareSignal<PlantHarvestedSignal>();
+            Container.DeclareSignal<ItemAddSignal<ConsumableData>>();
+            Container.DeclareSignal<ItemAddSignal<PlantData>>();
+        }
+
+        private void InitializePlayerInventory()
+        {
+            Container.BindInterfacesAndSelfTo<InventoryService>().AsSingle().WithArguments(_playerInventory);
         }
     }
     [Serializable]

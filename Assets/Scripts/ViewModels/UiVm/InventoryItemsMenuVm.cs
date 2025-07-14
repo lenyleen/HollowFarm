@@ -49,7 +49,7 @@ namespace DefaultNamespace.ViewModels.UiVm
                 .Subscribe(UpdateItemsButtons)
                 .AddTo(_disposables);
             
-            _model.GetAvialableItems();
+            
         }
         public void Show(){}
 
@@ -99,8 +99,6 @@ namespace DefaultNamespace.ViewModels.UiVm
 
             if (toUseItems > _positions.Count)
                 toUseItems = _positions.Count; 
-                
-            _model.ItemUsed(item, toUseItems);
             
             if (_activeButtons.TryGetValue(item, out var button))
                 button.UpdateQuantity(-toUseItems);

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using DefaultNamespace.Boosters.Interfaces;
 using DefaultNamespace.ScriptableObjects;
 using Service;
 using UniRx;
 
 namespace DefaultNamespace.Models
 {
-    public interface IPlantStateContext
+    public interface IPlantStateContext : IPlantModifierApplicable
     {
         public DateTime PlantedAt { get; }
         public TimeSpan DryDuration { get; }

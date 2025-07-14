@@ -26,7 +26,7 @@ namespace DefaultNamespace.ScriptableObjects
                 modifier.Duration = duration;
         }
 
-        public string ConsumableName => consumableName;
+        public string Name => consumableName;
         public string Description => description;
         public Sprite Icon => icon;
         public float Duration => duration;
